@@ -38,7 +38,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxLocation
             // 
             pictureBox1.BackColor = Color.AntiqueWhite;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
@@ -98,9 +98,10 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(TimeTableLabel);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxLocation);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -109,7 +110,7 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxLocation;
         private Label TimeTableLabel;
         private Button button1;
         private Label label1;
