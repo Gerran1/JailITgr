@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            pictureBoxLocation = new PictureBox();
             TimeTableLabel = new Label();
             button1 = new Button();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxLocation
             // 
-            pictureBox1.BackColor = Color.AntiqueWhite;
-            pictureBox1.Location = new Point(12, 285);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(776, 106);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxLocation.BackColor = SystemColors.ButtonShadow;
+            pictureBoxLocation.Location = new Point(12, 27);
+            pictureBoxLocation.Name = "pictureBoxLocation";
+            pictureBoxLocation.Size = new Size(776, 411);
+            pictureBoxLocation.TabIndex = 0;
+            pictureBoxLocation.TabStop = false;
             // 
             // TimeTableLabel
             // 
@@ -74,17 +76,28 @@
             label1.TabIndex = 4;
             label1.Text = "Расписание: ";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Cornsilk;
+            pictureBox1.Location = new Point(532, 27);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(256, 256);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(TimeTableLabel);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxLocation);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -92,9 +105,10 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxLocation;
         private Label TimeTableLabel;
         private Button button1;
         private Label label1;
+        private PictureBox pictureBox1;
     }
 }

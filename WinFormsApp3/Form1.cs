@@ -7,11 +7,18 @@ namespace WinFormsApp3
         public Form1()
         {
             InitializeComponent();
+            StartTest();
             TimeTableLabel.Text = TimeTables[0];
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            switch (i)
+            {
+                case 0:
+
+                break;
+            }
             if (i != 8)
             {
                 i++;
@@ -22,6 +29,10 @@ namespace WinFormsApp3
                 i = 0;
                 TimeTableLabel.Text = TimeTables[i];
             }
+           
+        }
+        public void StartTest()
+        {
             
         }
     }
