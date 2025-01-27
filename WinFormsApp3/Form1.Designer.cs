@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            pictureBox1 = new PictureBox();
+            pictureBoxLocation = new PictureBox();
             TimeTableLabel = new Label();
             button1 = new Button();
             label1 = new Label();
             pictureBox2 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxLocation
             // 
-            pictureBox1.BackColor = Color.AntiqueWhite;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(388, 40);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(400, 398);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxLocation.BackColor = Color.AntiqueWhite;
+            pictureBoxLocation.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBoxLocation.Location = new Point(388, 40);
+            pictureBoxLocation.Name = "pictureBox1";
+            pictureBoxLocation.Size = new Size(400, 398);
+            pictureBoxLocation.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLocation.TabIndex = 0;
+            pictureBoxLocation.TabStop = false;
             // 
             // TimeTableLabel
             // 
@@ -102,7 +102,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
