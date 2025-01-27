@@ -30,13 +30,14 @@
         {
             pictureBox1 = new PictureBox();
             TimeTableLabel = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.AntiqueWhite;
-            pictureBox1.Location = new Point(12, 332);
+            pictureBox1.Location = new Point(12, 285);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(776, 106);
             pictureBox1.TabIndex = 0;
@@ -51,11 +52,23 @@
             TimeTableLabel.TabIndex = 2;
             TimeTableLabel.Text = "Расписание: ";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.LightGreen;
+            button1.Font = new Font("Baskerville Old Face", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(705, 397);
+            button1.Name = "button1";
+            button1.Size = new Size(83, 41);
+            button1.TabIndex = 3;
+            button1.Text = " Далее";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(TimeTableLabel);
             Controls.Add(pictureBox1);
             Name = "Form1";
@@ -69,5 +82,6 @@
 
         private PictureBox pictureBox1;
         private Label TimeTableLabel;
+        private Button button1;
     }
 }
