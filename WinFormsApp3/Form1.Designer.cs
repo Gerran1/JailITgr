@@ -41,26 +41,30 @@
             // 
             pictureBoxLocation.BackColor = Color.AntiqueWhite;
             pictureBoxLocation.Image = Properties.Resources.тюремная_камера;
-            pictureBoxLocation.Location = new Point(388, 40);
+            pictureBoxLocation.Location = new Point(176, -1);
             pictureBoxLocation.Name = "pictureBoxLocation";
-            pictureBoxLocation.Size = new Size(400, 398);
-            pictureBoxLocation.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLocation.Size = new Size(624, 452);
+            pictureBoxLocation.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLocation.TabIndex = 0;
             pictureBoxLocation.TabStop = false;
             // 
             // TimeTableLabel
             // 
             TimeTableLabel.AutoSize = true;
-            TimeTableLabel.Location = new Point(82, 9);
+            TimeTableLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            TimeTableLabel.ForeColor = Color.Gold;
+            TimeTableLabel.Location = new Point(9, 30);
             TimeTableLabel.Name = "TimeTableLabel";
-            TimeTableLabel.Size = new Size(12, 15);
+            TimeTableLabel.Size = new Size(16, 21);
             TimeTableLabel.TabIndex = 2;
             TimeTableLabel.Text = "-";
             // 
             // button1
             // 
-            button1.BackColor = Color.LightGreen;
+            button1.BackColor = Color.Maroon;
+            button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Baskerville Old Face", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Gold;
             button1.Location = new Point(705, 397);
             button1.Name = "button1";
             button1.Size = new Size(83, 41);
@@ -72,18 +76,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(-2, 9);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label1.ForeColor = Color.Gold;
+            label1.Location = new Point(9, 9);
             label1.Name = "label1";
-            label1.Size = new Size(78, 15);
+            label1.Size = new Size(100, 21);
             label1.TabIndex = 4;
             label1.Text = "Расписание: ";
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Gold;
             pictureBox2.Image = Properties.Resources.луа;
-            pictureBox2.Location = new Point(12, 40);
+            pictureBox2.Location = new Point(9, 54);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(380, 398);
+            pictureBox2.Size = new Size(138, 137);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
@@ -92,6 +99,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Maroon;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox2);
             Controls.Add(label1);
