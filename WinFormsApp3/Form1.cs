@@ -2,7 +2,11 @@ namespace WinFormsApp3
 {
     public partial class Form1 : Form
     {
-        
+        static Classes.Pascal pascal = new Classes.Pascal();
+        static Classes.IPrisoner pascalAdapter = new Classes.PascalAdapter(pascal);
+        Classes.Player player;
+        static int Money = 0;
+
         int i = 0;
         List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
         public Form1()
@@ -37,7 +41,7 @@ namespace WinFormsApp3
                     break;
                 case 2:
                     //Перекличка
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     break;
                 case 3:
                     //Работа
@@ -107,17 +111,21 @@ namespace WinFormsApp3
             if (testPoints == 6)
             {
                 MessageBox.Show("Ну тут всё понятно, это Lua");
-                pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\луа.jpg");
+                pictureBox2.Image = Properties.Resources.assembler;
             }
             else if (testPoints >= 4 && testPoints < 6)
             {
                 MessageBox.Show("Вот ты и попался питонист!");
-                pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\питон.jpg");
+                pictureBox2.Image = Properties.Resources.python;
             }
             else if (testPoints == 3)
             {
                 MessageBox.Show("Ооооо, плюсы тебя с костями съедят, паскальный!");
-                pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\паскаль.jpg");
+                MessageBox.Show($"Вы получили ранг: {pascalAdapter.RankName}");
+                player = new Classes.Player(pascalAdapter.Health, pascalAdapter.Damage, pascalAdapter.Agility, pascalAdapter.Intelligence, pascalAdapter.Salary, pascalAdapter.RankName, Money);
+                pictureBox2.Image = Properties.Resources.Pascal;
+
+                
             }
 
         }
