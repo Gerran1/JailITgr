@@ -63,9 +63,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap асемблер {
+        internal static System.Drawing.Bitmap assembler {
             get {
-                object obj = ResourceManager.GetObject("асемблер", resourceCulture);
+                object obj = ResourceManager.GetObject("assembler", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap библиотека {
+        internal static System.Drawing.Bitmap C_ {
             get {
-                object obj = ResourceManager.GetObject("библиотека", resourceCulture);
+                object obj = ResourceManager.GetObject("C_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap душ {
+        internal static System.Drawing.Bitmap C__ {
             get {
-                object obj = ResourceManager.GetObject("душ", resourceCulture);
+                object obj = ResourceManager.GetObject("C__", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap луа {
+        internal static System.Drawing.Bitmap dining_room {
             get {
-                object obj = ResourceManager.GetObject("луа", resourceCulture);
+                object obj = ResourceManager.GetObject("dining_room", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap паскаль {
+        internal static System.Drawing.Bitmap gym {
             get {
-                object obj = ResourceManager.GetObject("паскаль", resourceCulture);
+                object obj = ResourceManager.GetObject("gym", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap питон {
+        internal static System.Drawing.Bitmap library {
             get {
-                object obj = ResourceManager.GetObject("питон", resourceCulture);
+                object obj = ResourceManager.GetObject("library", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap работа {
+        internal static System.Drawing.Bitmap Lua {
             get {
-                object obj = ResourceManager.GetObject("работа", resourceCulture);
+                object obj = ResourceManager.GetObject("Lua", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap с__ {
+        internal static System.Drawing.Bitmap Pascal {
             get {
-                object obj = ResourceManager.GetObject("с++", resourceCulture);
+                object obj = ResourceManager.GetObject("Pascal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap столовая {
+        internal static System.Drawing.Bitmap prison_cell {
             get {
-                object obj = ResourceManager.GetObject("столовая", resourceCulture);
+                object obj = ResourceManager.GetObject("prison_cell", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap тренажерка {
+        internal static System.Drawing.Bitmap python {
             get {
-                object obj = ResourceManager.GetObject("тренажерка", resourceCulture);
+                object obj = ResourceManager.GetObject("python", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap тюремная_камера {
+        internal static System.Drawing.Bitmap shower {
             get {
-                object obj = ResourceManager.GetObject("тюремная камера", resourceCulture);
+                object obj = ResourceManager.GetObject("shower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap улица {
+        internal static System.Drawing.Bitmap street {
             get {
-                object obj = ResourceManager.GetObject("улица", resourceCulture);
+                object obj = ResourceManager.GetObject("street", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap шарп {
+        internal static System.Drawing.Bitmap work {
             get {
-                object obj = ResourceManager.GetObject("шарп", resourceCulture);
+                object obj = ResourceManager.GetObject("work", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,45 +28,44 @@ namespace WinFormsApp3
             {
                 case 0:
                     //подъём
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
-                    
+                    pictureBoxLocation.Image = Properties.Resources.prison_cell;
+
                     break;
                 case 1:
                     //Завтрак
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\столовая.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.dining_room;
                     break;
                 case 2:
                     //Перекличка
                     pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
-                    
                     break;
                 case 3:
                     //Работа
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\работа.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.work;
                     break;
                 case 4:
                     //Обед
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\столовая.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.dining_room;
                     break;
                 case 5:
                     //Cвободное Время
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\улица.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.street;
                     break;
                 case 6:
                     //Ужин
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\столовая.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.dining_room;
                     break;
                 case 7:
                     //Подготовка ко сну
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     break;
                 case 8:
                     //Сон
-                    pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
+                    pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     break;
             }
-            
-           
+
+
         }
         public void Test()
         {
@@ -109,19 +108,16 @@ namespace WinFormsApp3
             {
                 MessageBox.Show("Ну тут всё понятно, это Lua");
                 pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\луа.jpg");
-
             }
             else if (testPoints >= 4 && testPoints < 6)
             {
                 MessageBox.Show("Вот ты и попался питонист!");
                 pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\питон.jpg");
-
             }
             else if (testPoints == 3)
             {
                 MessageBox.Show("Ооооо, плюсы тебя с костями съедят, паскальный!");
                 pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\паскаль.jpg");
-
             }
 
         }

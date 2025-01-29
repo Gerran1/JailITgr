@@ -40,7 +40,7 @@
             // pictureBoxLocation
             // 
             pictureBoxLocation.BackColor = Color.AntiqueWhite;
-            pictureBoxLocation.Image = Properties.Resources.тюремная_камера;
+            pictureBoxLocation.Image = Properties.Resources.prison_cell;
             pictureBoxLocation.Location = new Point(176, -1);
             pictureBoxLocation.Name = "pictureBoxLocation";
             pictureBoxLocation.Size = new Size(624, 452);
@@ -87,7 +87,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Gold;
-            pictureBox2.Image = Properties.Resources.луа;
+            pictureBox2.Image = Properties.Resources.Lua;
             pictureBox2.Location = new Point(9, 54);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(138, 137);
