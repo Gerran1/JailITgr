@@ -2,6 +2,7 @@ namespace WinFormsApp3
 {
     public partial class Form1 : Form
     {
+        
         int i = 0;
         List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
         public Form1()
@@ -28,7 +29,7 @@ namespace WinFormsApp3
                 case 0:
                     //подъём
                     pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
-
+                    
                     break;
                 case 1:
                     //Завтрак
@@ -37,6 +38,7 @@ namespace WinFormsApp3
                 case 2:
                     //Перекличка
                     pictureBoxLocation.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\тюремная камера.jpg");
+                    
                     break;
                 case 3:
                     //Работа
@@ -70,7 +72,7 @@ namespace WinFormsApp3
         {
             int testPoints = 0;
 
-           DialogResult dr = MessageBox.Show("Опыт в кодинге более 3-х лет?", "Первый вопрос", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Опыт в кодинге более 3-х лет?", "Первый вопрос", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -107,17 +109,22 @@ namespace WinFormsApp3
             {
                 MessageBox.Show("Ну тут всё понятно, это Lua");
                 pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\луа.jpg");
+
             }
             else if (testPoints >= 4 && testPoints < 6)
             {
                 MessageBox.Show("Вот ты и попался питонист!");
                 pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\питон.jpg");
+
             }
             else if (testPoints == 3)
             {
                 MessageBox.Show("Ооооо, плюсы тебя с костями съедят, паскальный!");
                 pictureBox2.Image = Image.FromFile("C:\\Users\\мк\\Source\\Repos\\JailITgr0.1\\WinFormsApp3\\Resources\\паскаль.jpg");
+
             }
+
         }
+
     }
 }
