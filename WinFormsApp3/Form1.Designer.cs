@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxLocation = new PictureBox();
             TimeTableLabel = new Label();
             button1 = new Button();
@@ -41,9 +40,9 @@
             // pictureBoxLocation
             // 
             pictureBoxLocation.BackColor = Color.AntiqueWhite;
-            pictureBoxLocation.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBoxLocation.Image = Properties.Resources.тюремная_камера;
             pictureBoxLocation.Location = new Point(388, 40);
-            pictureBoxLocation.Name = "pictureBox1";
+            pictureBoxLocation.Name = "pictureBoxLocation";
             pictureBoxLocation.Size = new Size(400, 398);
             pictureBoxLocation.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxLocation.TabIndex = 0;
@@ -81,7 +80,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Image = Properties.Resources.луа;
             pictureBox2.Location = new Point(12, 40);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(380, 398);
@@ -101,7 +100,6 @@
             Controls.Add(pictureBoxLocation);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
