@@ -11,7 +11,7 @@ namespace WinFormsApp3
         Classes.Player player;
         Questes questes = new Questes();
         static int Money = 0;
-
+        int Days = 0;
         int i = 0;
         List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
         public Form1()
@@ -38,7 +38,7 @@ namespace WinFormsApp3
                 case 0:
                     //подъём
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
-
+                    Days += 1;
                     break;
                 case 1:
                     //Завтрак
@@ -47,10 +47,12 @@ namespace WinFormsApp3
                 case 2:
                     //Перекличка
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
+                    MessageBox.Show($"Дней в тюрьме: {Days}\n Деньги: \n {player.Money} Ранг: {player.RankName} \n Здоровье: {player.Health} \n Урон: {player.Damage} \n Ловкость: {player.Agility} \n Интеллект: {player.Intelligence} \n Зарплата: {player.Salary} руб.\n" ,"Статистика",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 3:
                     //Работа
                     pictureBoxLocation.Image = Properties.Resources.work;
+                    player.Money += player.Salary;
                     break;
                 case 4:
                     //Обед
