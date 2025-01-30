@@ -117,6 +117,66 @@ namespace WinFormsApp3
             }
         }
 
+        public class CSharp
+        {
+            public int Health = 7;
+            public int Damage = 6;
+            public int Agility = 5;
+            public int Intelligence = 6;
+            public int Salary = 400;
+            public string RankName = "Сишарпист";
+
+            public CSharp()
+            {
+                Health = 7;
+                Damage = 6;
+                Agility = 5;
+                Intelligence = 6;
+                Salary = 400;
+                RankName = "Сишарпист";
+            }
+        }
+
+        public class Cpp
+        {
+            public int Health = 7;
+            public int Damage = 6;
+            public int Agility = 6;
+            public int Intelligence = 7;
+            public int Salary = 500;
+            public string RankName = "Плюсист";
+
+            public Cpp ()
+            {
+                Health = 7;
+                Damage = 6;
+                Agility = 6;
+                Intelligence = 7;
+                Salary = 500;
+                RankName = "Плюсист";
+            }
+        }
+
+        public class Assembly
+        {
+            public int Health = 9;
+            public int Damage = 9;
+            public int Agility = 9;
+            public int Intelligence = 9;
+            public int Salary = 600;
+            public string RankName = "Ассемблер";
+
+            public Assembly()
+            {
+                Health = 9;
+                Damage = 9;
+                Agility = 9;
+                Intelligence = 9;
+                Salary = 600;
+                RankName = "Ассемблер";
+            }
+        }
+
         public class PascalAdapter : IPrisoner
         {
             readonly Pascal _playerRank;
@@ -168,6 +228,56 @@ namespace WinFormsApp3
             }
         }
 
+        public class CSharpAdapter : IPrisoner
+        {
+            readonly CSharp _playerRank;
+
+            public int Health { get { return this._playerRank.Health; } set { this.Health = value; } }
+            public int Damage { get { return this._playerRank.Damage; } set { this.Damage = value; } }
+            public int Agility { get { return this._playerRank.Agility; } set { this.Agility = value; } }
+            public int Intelligence { get { return this._playerRank.Intelligence; } set { this.Intelligence = value; } }
+            public int Salary { get { return this._playerRank.Salary; } set { this.Salary = value; } }
+            public string RankName { get { return this._playerRank.RankName; } set { this.RankName = value; } }
+
+            public CSharpAdapter(CSharp playerRank)
+            {
+                this._playerRank = playerRank;
+            }
+        }
+
+        public class CppAdapter : IPrisoner
+        {
+            readonly Cpp _playerRank;
+
+            public int Health { get { return this._playerRank.Health; } set { this.Health = value; } }
+            public int Damage { get { return this._playerRank.Damage; } set { this.Damage = value; } }
+            public int Agility { get { return this._playerRank.Agility; } set { this.Agility = value; } }
+            public int Intelligence { get { return this._playerRank.Intelligence; } set { this.Intelligence = value; } }
+            public int Salary { get { return this._playerRank.Salary; } set { this.Salary = value; } }
+            public string RankName { get { return this._playerRank.RankName; } set { this.RankName = value; } }
+
+            public CppAdapter(Cpp playerRank)
+            {
+                this._playerRank = playerRank;
+            }
+        }
+
+        public class AssemblyAdapter : IPrisoner
+        {
+            readonly Assembly _playerRank;
+
+            public int Health { get { return this._playerRank.Health; } set { this.Health = value; } }
+            public int Damage { get { return this._playerRank.Damage; } set { this.Damage = value; } }
+            public int Agility { get { return this._playerRank.Agility; } set { this.Agility = value; } }
+            public int Intelligence { get { return this._playerRank.Intelligence; } set { this.Intelligence = value; } }
+            public int Salary { get { return this._playerRank.Salary; } set { this.Salary = value; } }
+            public string RankName { get { return this._playerRank.RankName; } set { this.RankName = value; } }
+
+            public AssemblyAdapter(Assembly playerRank)
+            {
+                this._playerRank = playerRank;
+            }
+        }
 
     }
 }

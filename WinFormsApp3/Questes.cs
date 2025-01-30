@@ -8,10 +8,12 @@ namespace WinFormsApp3
 {
     internal class Questes
     {
+
         public void FirstQuest()
         {
             MessageBox.Show("Вы начали квест \"Что ж ты, фронтэнд, подошёл.\"", "Начальный квест", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+        
     }
 }
