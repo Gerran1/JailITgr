@@ -59,12 +59,12 @@ namespace WinFormsApp3
 
         public class Pascal
         {
-            public int Health = 3;
-            public int Damage = 3;
-            public int Agility = 3;
-            public int Intelligence = 3;
-            public int Salary = 100;
-            public string RankName = "Паскаль";
+            public int Health;
+            public int Damage;
+            public int Agility;
+            public int Intelligence;
+            public int Salary;
+            public string RankName;
 
             public Pascal()
             {
@@ -79,12 +79,12 @@ namespace WinFormsApp3
 
         public class Python
         {
-            public int Health = 8;
-            public int Damage = 2;
-            public int Agility = 7;
-            public int Intelligence = 5;
-            public int Salary = 200;
-            public string RankName = "Питонист";
+            public int Health;
+            public int Damage;
+            public int Agility;
+            public int Intelligence;
+            public int Salary;
+            public string RankName;
 
             public Python()
             {
@@ -99,12 +99,12 @@ namespace WinFormsApp3
 
         public class Lua
         {
-            public int Health = 5;
-            public int Damage = 5;
-            public int Agility = 7;
-            public int Intelligence = 5;
-            public int Salary = 300;
-            public string RankName = "Луанист";
+            public int Health;
+            public int Damage;
+            public int Agility;
+            public int Intelligence;
+            public int Salary;
+            public string RankName;
 
             public Lua()
             {
@@ -119,12 +119,12 @@ namespace WinFormsApp3
 
         public class CSharp
         {
-            public int Health = 7;
-            public int Damage = 6;
-            public int Agility = 5;
-            public int Intelligence = 6;
-            public int Salary = 400;
-            public string RankName = "Сишарпист";
+            public int Health;
+            public int Damage;
+            public int Agility;
+            public int Intelligence;
+            public int Salary;
+            public string RankName;
 
             public CSharp()
             {
@@ -139,13 +139,12 @@ namespace WinFormsApp3
 
         public class Cpp
         {
-            public int Health = 7;
-            public int Damage = 6;
-            public int Agility = 6;
-            public int Intelligence = 7;
-            public int Salary = 500;
-            public string RankName = "Плюсист";
-
+            public int Health;
+            public int Damage;
+            public int Agility;
+            public int Intelligence;
+            public int Salary;
+            public string RankName;
             public Cpp ()
             {
                 Health = 7;
@@ -159,12 +158,12 @@ namespace WinFormsApp3
 
         public class Assembly
         {
-            public int Health = 9;
-            public int Damage = 9;
-            public int Agility = 9;
-            public int Intelligence = 9;
-            public int Salary = 600;
-            public string RankName = "Ассемблер";
+            public int Health;
+            public int Damage;
+            public int Agility;
+            public int Intelligence;
+            public int Salary;
+            public string RankName;
 
             public Assembly()
             {
