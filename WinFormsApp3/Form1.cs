@@ -9,6 +9,7 @@ namespace WinFormsApp3
         static Classes.IPrisoner pythonAdapter = new Classes.PythonAdapter(python);
         static Classes.IPrisoner luaAdapter = new Classes.LuaAdapter(lua);
         Classes.Player player;
+        Questes questes = new Questes();
         static int Money = 0;
 
         int i = 0;
@@ -116,27 +117,34 @@ namespace WinFormsApp3
             {
                 MessageBox.Show("Ну тут всё понятно, это Lua");
                 pictureBox2.Image = Properties.Resources.Lua;
-                MessageBox.Show($"Вы получили ранг: {luaAdapter.RankName}");
                 player = new Classes.Player(luaAdapter.Health, luaAdapter.Damage, luaAdapter.Agility, luaAdapter.Intelligence, luaAdapter.Salary, luaAdapter.RankName, Money);
+
+                MessageBox.Show($"Вы получили ранг: {player.RankName}");
+                
             }
             else if (testPoints >= 4 && testPoints < 6)
             {
                 MessageBox.Show("Вот ты и попался питонист!");
                 pictureBox2.Image = Properties.Resources.python;
-                MessageBox.Show($"Вы получили ранг: {pythonAdapter.RankName}");
                 player = new Classes.Player(pythonAdapter.Health, pythonAdapter.Damage, pythonAdapter.Agility, pythonAdapter.Intelligence, pythonAdapter.Salary, pythonAdapter.RankName, Money);
+
+                MessageBox.Show($"Вы получили ранг: {player.RankName}");
+                
             }
             else if (testPoints == 3)
             {
                 MessageBox.Show("Ооооо, плюсы тебя с костями съедят, паскальный!");
-                MessageBox.Show($"Вы получили ранг: {pascalAdapter.RankName}");
+                
                 player = new Classes.Player(pascalAdapter.Health, pascalAdapter.Damage, pascalAdapter.Agility, pascalAdapter.Intelligence, pascalAdapter.Salary, pascalAdapter.RankName, Money);
+                MessageBox.Show($"Вы получили ранг: {player.RankName}");
                 pictureBox2.Image = Properties.Resources.Pascal;
-
+                 
                 
             }
-
+            questes.FirstQuest();
         }
+
+           
 
     }
 }
