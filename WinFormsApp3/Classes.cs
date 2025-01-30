@@ -63,7 +63,7 @@ namespace WinFormsApp3
             public int Damage = 3;
             public int Agility = 3;
             public int Intelligence = 3;
-            public int Salary = 3;
+            public int Salary = 100;
             public string RankName = "Паскаль";
 
             public Pascal()
@@ -72,8 +72,48 @@ namespace WinFormsApp3
                 Damage = 3;
                 Agility = 3;
                 Intelligence = 3;
-                Salary = 3;
+                Salary = 100;
                 RankName = "Паскаль";
+            }
+        }
+
+        public class Python
+        {
+            public int Health = 8;
+            public int Damage = 2;
+            public int Agility = 7;
+            public int Intelligence = 5;
+            public int Salary = 200;
+            public string RankName = "Питонист";
+
+            public Python()
+            {
+                Health = 8;
+                Damage = 2;
+                Agility = 7;
+                Intelligence = 5;
+                Salary = 200;
+                RankName = "Питонист";
+            }
+        }
+
+        public class Lua
+        {
+            public int Health = 5;
+            public int Damage = 5;
+            public int Agility = 7;
+            public int Intelligence = 5;
+            public int Salary = 300;
+            public string RankName = "Луанист";
+
+            public Lua()
+            {
+                Health = 5;
+                Damage = 5;
+                Agility = 7;
+                Intelligence = 5;
+                Salary = 300;
+                RankName = "Луанист";
             }
         }
 
@@ -92,6 +132,40 @@ namespace WinFormsApp3
             {
                 this._playerRank = playerRank;
             }              
+        }
+
+        public class PythonAdapter : IPrisoner
+        {
+            readonly Python _playerRank;
+
+            public int Health { get { return this._playerRank.Health; } set { this.Health = value; } }
+            public int Damage { get { return this._playerRank.Damage; } set { this.Damage = value; } }
+            public int Agility { get { return this._playerRank.Agility; } set { this.Agility = value; } }
+            public int Intelligence { get { return this._playerRank.Intelligence; } set { this.Intelligence = value; } }
+            public int Salary { get { return this._playerRank.Salary; } set { this.Salary = value; } }
+            public string RankName { get { return this._playerRank.RankName; } set { this.RankName = value; } }
+
+            public PythonAdapter(Python playerRank)
+            {
+                this._playerRank = playerRank;
+            }
+        }
+
+        public class LuaAdapter : IPrisoner
+        {
+            readonly Lua _playerRank;
+
+            public int Health { get { return this._playerRank.Health; } set { this.Health = value; } }
+            public int Damage { get { return this._playerRank.Damage; } set { this.Damage = value; } }
+            public int Agility { get { return this._playerRank.Agility; } set { this.Agility = value; } }
+            public int Intelligence { get { return this._playerRank.Intelligence; } set { this.Intelligence = value; } }
+            public int Salary { get { return this._playerRank.Salary; } set { this.Salary = value; } }
+            public string RankName { get { return this._playerRank.RankName; } set { this.RankName = value; } }
+
+            public LuaAdapter(Lua playerRank)
+            {
+                this._playerRank = playerRank;
+            }
         }
 
 

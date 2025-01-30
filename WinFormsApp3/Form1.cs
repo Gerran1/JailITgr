@@ -3,7 +3,11 @@ namespace WinFormsApp3
     public partial class Form1 : Form
     {
         static Classes.Pascal pascal = new Classes.Pascal();
+        static Classes.Python python = new Classes.Python();
+        static Classes.Lua lua = new Classes.Lua();
         static Classes.IPrisoner pascalAdapter = new Classes.PascalAdapter(pascal);
+        static Classes.IPrisoner pythonAdapter = new Classes.PythonAdapter(python);
+        static Classes.IPrisoner luaAdapter = new Classes.LuaAdapter(lua);
         Classes.Player player;
         static int Money = 0;
 
@@ -111,12 +115,16 @@ namespace WinFormsApp3
             if (testPoints == 6)
             {
                 MessageBox.Show("Ну тут всё понятно, это Lua");
-                pictureBox2.Image = Properties.Resources.assembler;
+                pictureBox2.Image = Properties.Resources.Lua;
+                MessageBox.Show($"Вы получили ранг: {luaAdapter.RankName}");
+                player = new Classes.Player(luaAdapter.Health, luaAdapter.Damage, luaAdapter.Agility, luaAdapter.Intelligence, luaAdapter.Salary, luaAdapter.RankName, Money);
             }
             else if (testPoints >= 4 && testPoints < 6)
             {
                 MessageBox.Show("Вот ты и попался питонист!");
                 pictureBox2.Image = Properties.Resources.python;
+                MessageBox.Show($"Вы получили ранг: {pythonAdapter.RankName}");
+                player = new Classes.Player(pythonAdapter.Health, pythonAdapter.Damage, pythonAdapter.Agility, pythonAdapter.Intelligence, pythonAdapter.Salary, pythonAdapter.RankName, Money);
             }
             else if (testPoints == 3)
             {
