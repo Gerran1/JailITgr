@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 
 namespace WinFormsApp3
 {
@@ -22,7 +22,7 @@ namespace WinFormsApp3
         int i = 0;
         int SneakAttackChance;
         
-        List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
+        List<string> TimeTables = new List<string>() { "РџРѕРґСЉС‘Рј", "Р—Р°РІС‚СЂР°Рє", "РџРµСЂРµРєР»РёС‡РєР°", "Р Р°Р±РѕС‚Р°", "РћР±РµРґ", "CРІРѕР±РѕРґРЅРѕРµ Р’СЂРµРјСЏ", "РЈР¶РёРЅ", "РџРѕРґРіРѕС‚РѕРІРєР° РєРѕ СЃРЅСѓ", "РЎРѕРЅ" };
         public Form1()
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace WinFormsApp3
             switch (i)
             {
                 case 0:
-                    //подъём
+                    //РїРѕРґСЉС‘Рј
 
                     SneakAttackChance = random2.Next(1, 100);
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
@@ -57,26 +57,26 @@ namespace WinFormsApp3
                     }
                     else
                     {
-                        MessageBox.Show("Всё прошло без происшествий");
+                        MessageBox.Show("Р’СЃС‘ РїСЂРѕС€Р»Рѕ Р±РµР· РїСЂРѕРёСЃС€РµСЃС‚РІРёР№");
                     }
 
                     break;
                 case 1:
-                    //Завтрак
+                    //Р—Р°РІС‚СЂР°Рє
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     break;
                 case 2:
-                    //Перекличка
+                    //РџРµСЂРµРєР»РёС‡РєР°
 
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
-                    MessageBox.Show($"Дней в тюрьме: {Days}\n Деньги: {player.Money}\n Масть: {player.RankName} \n Здоровье: {player.Health} \n Урон: {player.Damage} \n Ловкость: {player.Agility} \n Интеллект: {player.Intelligence} \n Зарплата: {player.Salary} руб.\n" ,"Статистика",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Р”РЅРµР№ РІ С‚СЋСЂСЊРјРµ: {Days}\n Р”РµРЅСЊРіРё: {player.Money}\n РњР°СЃС‚СЊ: {player.RankName} \n Р—РґРѕСЂРѕРІСЊРµ: {player.Health} \n РЈСЂРѕРЅ: {player.Damage} \n Р›РѕРІРєРѕСЃС‚СЊ: {player.Agility} \n РРЅС‚РµР»Р»РµРєС‚: {player.Intelligence} \n Р—Р°СЂРїР»Р°С‚Р°: {player.Salary} СЂСѓР±.\n" ,"РЎС‚Р°С‚РёСЃС‚РёРєР°",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 3:
-                    //Работа
+                    //Р Р°Р±РѕС‚Р°
 
                     pictureBoxLocation.Image = Properties.Resources.work;
-                    MessageBox.Show($"Вы заработали на работе: {player.Salary} рублей");
+                    MessageBox.Show($"Р’С‹ Р·Р°СЂР°Р±РѕС‚Р°Р»Рё РЅР° СЂР°Р±РѕС‚Рµ: {player.Salary} СЂСѓР±Р»РµР№");
                     player.Money += player.Salary;
 
                     if (SneakAttackChance <= 35)
@@ -85,32 +85,32 @@ namespace WinFormsApp3
                     }
                     else
                     {
-                        MessageBox.Show("Работа прошла без происшествий");
+                        MessageBox.Show("Р Р°Р±РѕС‚Р° РїСЂРѕС€Р»Р° Р±РµР· РїСЂРѕРёСЃС€РµСЃС‚РІРёР№");
                     }
 
                     break;
                 case 4:
-                    //Обед
+                    //РћР±РµРґ
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     break;
                 case 5:
-                    //Cвободное Время
+                    //CРІРѕР±РѕРґРЅРѕРµ Р’СЂРµРјСЏ
 
                     pictureBoxLocation.Image = Properties.Resources.street;
                     break;
                 case 6:
-                    //Ужин
+                    //РЈР¶РёРЅ
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     break;
                 case 7:
-                    //Подготовка ко сну
+                    //РџРѕРґРіРѕС‚РѕРІРєР° РєРѕ СЃРЅСѓ
 
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     break;
                 case 8:
-                    //Сон
+                    //РЎРѕРЅ
 
                     if (SneakAttackChance <= 35)
                     {
@@ -118,7 +118,7 @@ namespace WinFormsApp3
                     }
                     else
                     {
-                        MessageBox.Show("Сон прошёл без происшествий");
+                        MessageBox.Show("РЎРѕРЅ РїСЂРѕС€С‘Р» Р±РµР· РїСЂРѕРёСЃС€РµСЃС‚РІРёР№");
                     }
 
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
@@ -131,7 +131,7 @@ namespace WinFormsApp3
         {
             int testPoints = 0;
 
-            DialogResult dr = MessageBox.Show("Опыт в кодинге более 3-х лет?", "Первый вопрос", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("РћРїС‹С‚ РІ РєРѕРґРёРЅРіРµ Р±РѕР»РµРµ 3-С… Р»РµС‚?", "РџРµСЂРІС‹Р№ РІРѕРїСЂРѕСЃ", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -142,7 +142,7 @@ namespace WinFormsApp3
                 testPoints += 1;
             }
 
-            dr = MessageBox.Show("Паттерны использовал?", "Второй вопрос", MessageBoxButtons.YesNo);
+            dr = MessageBox.Show("РџР°С‚С‚РµСЂРЅС‹ РёСЃРїРѕР»СЊР·РѕРІР°Р»?", "Р’С‚РѕСЂРѕР№ РІРѕРїСЂРѕСЃ", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -153,7 +153,7 @@ namespace WinFormsApp3
                 testPoints += 1;
             }
 
-            dr = MessageBox.Show("Чужой код воровал", "Третий вопрос?", MessageBoxButtons.YesNo);
+            dr = MessageBox.Show("Р§СѓР¶РѕР№ РєРѕРґ РІРѕСЂРѕРІР°Р»", "РўСЂРµС‚РёР№ РІРѕРїСЂРѕСЃ?", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -166,28 +166,28 @@ namespace WinFormsApp3
 
             if (testPoints == 6)
             {
-                MessageBox.Show("Ну тут всё понятно, это Lua");
+                MessageBox.Show("РќСѓ С‚СѓС‚ РІСЃС‘ РїРѕРЅСЏС‚РЅРѕ, СЌС‚Рѕ Lua");
                 pictureBox2.Image = Properties.Resources.Lua;
                 player = new Classes.Player(luaAdapter.Health, luaAdapter.Damage, luaAdapter.Agility, luaAdapter.Intelligence, luaAdapter.Salary, luaAdapter.RankName, Money);
 
-                MessageBox.Show($"Вы получили масть: {player.RankName}");
+                MessageBox.Show($"Р’С‹ РїРѕР»СѓС‡РёР»Рё РјР°СЃС‚СЊ: {player.RankName}");
                 
             }
             else if (testPoints >= 4 && testPoints < 6)
             {
-                MessageBox.Show("Вот ты и попался питонист!");
+                MessageBox.Show("Р’РѕС‚ С‚С‹ Рё РїРѕРїР°Р»СЃСЏ РїРёС‚РѕРЅРёСЃС‚!");
                 pictureBox2.Image = Properties.Resources.python;
                 player = new Classes.Player(pythonAdapter.Health, pythonAdapter.Damage, pythonAdapter.Agility, pythonAdapter.Intelligence, pythonAdapter.Salary, pythonAdapter.RankName, Money);
 
-                MessageBox.Show($"Вы получили масть: {player.RankName}");
+                MessageBox.Show($"Р’С‹ РїРѕР»СѓС‡РёР»Рё РјР°СЃС‚СЊ: {player.RankName}");
                 
             }
             else if (testPoints == 3)
             {
-                MessageBox.Show("Ооооо, плюсы тебя с костями съедят, паскальный!");
+                MessageBox.Show("РћРѕРѕРѕРѕ, РїР»СЋСЃС‹ С‚РµР±СЏ СЃ РєРѕСЃС‚СЏРјРё СЃСЉРµРґСЏС‚, РїР°СЃРєР°Р»СЊРЅС‹Р№!");
                 
                 player = new Classes.Player(pascalAdapter.Health, pascalAdapter.Damage, pascalAdapter.Agility, pascalAdapter.Intelligence, pascalAdapter.Salary, pascalAdapter.RankName, Money);
-                MessageBox.Show($"Вы получили масть: {player.RankName}");
+                MessageBox.Show($"Р’С‹ РїРѕР»СѓС‡РёР»Рё РјР°СЃС‚СЊ: {player.RankName}");
                 pictureBox2.Image = Properties.Resources.Pascal;
                  
                 
@@ -198,112 +198,112 @@ namespace WinFormsApp3
         public void SneakAttackToYou()
         {
             int randomSA = random.Next(1, 100);
-            if (player.RankName == "Паскаль")
+            if (player.RankName == "РџР°СЃРєР°Р»СЊ")
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Луанист толкнул вас, вы ударились головой об стенку и потеряли немного здоровья");
+                    MessageBox.Show("Р›СѓР°РЅРёСЃС‚ С‚РѕР»РєРЅСѓР» РІР°СЃ, РІС‹ СѓРґР°СЂРёР»РёСЃСЊ РіРѕР»РѕРІРѕР№ РѕР± СЃС‚РµРЅРєСѓ Рё РїРѕС‚РµСЂСЏР»Рё РЅРµРјРЅРѕРіРѕ Р·РґРѕСЂРѕРІСЊСЏ");
                     player.Health -= 1;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость немного снизилась");
+                    MessageBox.Show("РџР»СЋСЃРёСЃС‚ СЂРµС€РёР» РїРѕРёР·РґРµРІР°С‚СЊСЃСЏ РЅР°Рґ РІР°РјРё, Р±РµРіР°СЏ Р·Р° РІР°РјРё СЃ Р·Р°С‚РѕС‡РєРѕР№. Р’С‹ СЃРјРѕРіР»Рё СѓР±РµР¶Р°С‚СЊ, РЅРѕ СѓРґРµСЂР°Р»Рё С‚Р°Рє РґРѕР»РіРѕ, С‡С‚Рѕ РІР°С€Р° Р»РѕРІРєРѕСЃС‚СЊ РЅРµРјРЅРѕРіРѕ СЃРЅРёР·РёР»Р°СЃСЊ");
                     player.Agility -= 1;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Питонист вывернул вам руку просто так, её быстро вправили, но вы потеряли немного урона");
+                    MessageBox.Show("РџРёС‚РѕРЅРёСЃС‚ РІС‹РІРµСЂРЅСѓР» РІР°Рј СЂСѓРєСѓ РїСЂРѕСЃС‚Рѕ С‚Р°Рє, РµС‘ Р±С‹СЃС‚СЂРѕ РІРїСЂР°РІРёР»Рё, РЅРѕ РІС‹ РїРѕС‚РµСЂСЏР»Рё РЅРµРјРЅРѕРіРѕ СѓСЂРѕРЅР°");
                     player.Damage -= 1;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Сишарпист начал пояснять вам за ООП, вы немного сошли с ума и потеряли немного интеллекта");
+                    MessageBox.Show("РЎРёС€Р°СЂРїРёСЃС‚ РЅР°С‡Р°Р» РїРѕСЏСЃРЅСЏС‚СЊ РІР°Рј Р·Р° РћРћРџ, РІС‹ РЅРµРјРЅРѕРіРѕ СЃРѕС€Р»Рё СЃ СѓРјР° Рё РїРѕС‚РµСЂСЏР»Рё РЅРµРјРЅРѕРіРѕ РёРЅС‚РµР»Р»РµРєС‚Р°");
                     player.Intelligence -= 1;
                 }
             }
 
-            if (player.RankName == "Питонист")
+            if (player.RankName == "РџРёС‚РѕРЅРёСЃС‚")
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Луанист толкнул вас, вы ударились головой об пол и потеряли много здоровья");
+                    MessageBox.Show("Р›СѓР°РЅРёСЃС‚ С‚РѕР»РєРЅСѓР» РІР°СЃ, РІС‹ СѓРґР°СЂРёР»РёСЃСЊ РіРѕР»РѕРІРѕР№ РѕР± РїРѕР» Рё РїРѕС‚РµСЂСЏР»Рё РјРЅРѕРіРѕ Р·РґРѕСЂРѕРІСЊСЏ");
                     player.Health -= 3;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("РџР»СЋСЃРёСЃС‚ СЂРµС€РёР» РїРѕРёР·РґРµРІР°С‚СЊСЃСЏ РЅР°Рґ РІР°РјРё, Р±РµРіР°СЏ Р·Р° РІР°РјРё СЃ Р·Р°С‚РѕС‡РєРѕР№. Р’С‹ СЃРјРѕРіР»Рё СѓР±РµР¶Р°С‚СЊ, РЅРѕ СѓРґРµСЂР°Р»Рё С‚Р°Рє РґРѕР»РіРѕ, С‡С‚Рѕ РІР°С€Р° Р»РѕРІРєРѕСЃС‚СЊ СЃРЅРёР·РёР»Р°СЃСЊ");
                     player.Agility -= 2;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("От злости, что вы не смогли написать нормальный код, вы ударили ноутбук, ноутбук не пострадал в отличии от ваше руки. Ваш урон снизился");
+                    MessageBox.Show("РћС‚ Р·Р»РѕСЃС‚Рё, С‡С‚Рѕ РІС‹ РЅРµ СЃРјРѕРіР»Рё РЅР°РїРёСЃР°С‚СЊ РЅРѕСЂРјР°Р»СЊРЅС‹Р№ РєРѕРґ, РІС‹ СѓРґР°СЂРёР»Рё РЅРѕСѓС‚Р±СѓРє, РЅРѕСѓС‚Р±СѓРє РЅРµ РїРѕСЃС‚СЂР°РґР°Р» РІ РѕС‚Р»РёС‡РёРё РѕС‚ РІР°С€Рµ СЂСѓРєРё. Р’Р°С€ СѓСЂРѕРЅ СЃРЅРёР·РёР»СЃСЏ");
                     player.Damage -= 2;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект");
+                    MessageBox.Show("РђСЃСЃРµРјР±Р»РµСЂ РЅР°С‡Р°Р» РїРѕСЏСЃРЅСЏС‚СЊ РІР°Рј Р·Р° СЃРІРѕР№ СЏР·С‹Рє, РІС‹ СЃРѕС€Р»Рё СЃ СѓРјР° Рё РїРѕС‚РµСЂСЏР»Рё РёРЅС‚РµР»Р»РµРєС‚");
                     player.Intelligence -= 2;
                 }
             }
 
-            if (player.RankName == "Луанист")
+            if (player.RankName == "Р›СѓР°РЅРёСЃС‚")
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Сишарпист толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья");
+                    MessageBox.Show("РЎРёС€Р°СЂРїРёСЃС‚ С‚РѕР»РєРЅСѓР» РІР°СЃ, РІС‹ СѓРґР°СЂРёР»РёСЃСЊ РіРѕР»РѕРІРѕР№ РѕР± СЃС‚РµРЅРєСѓ Рё РїРѕС‚РµСЂСЏР»Рё РЅРµСЃРёР»СЊРЅРѕ РјРЅРѕРіРѕ Р·РґРѕСЂРѕРІСЊСЏ");
                     player.Health -= 2;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("РџР»СЋСЃРёСЃС‚ СЂРµС€РёР» РїРѕРёР·РґРµРІР°С‚СЊСЃСЏ РЅР°Рґ РІР°РјРё, Р±РµРіР°СЏ Р·Р° РІР°РјРё СЃ Р·Р°С‚РѕС‡РєРѕР№. Р’С‹ СЃРјРѕРіР»Рё СѓР±РµР¶Р°С‚СЊ, РЅРѕ СѓРґРµСЂР°Р»Рё С‚Р°Рє РґРѕР»РіРѕ, С‡С‚Рѕ РІР°С€Р° Р»РѕРІРєРѕСЃС‚СЊ СЃРЅРёР·РёР»Р°СЃСЊ");
                     player.Agility -= 2;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Сишарпист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона");
+                    MessageBox.Show("РЎРёС€Р°СЂРїРёСЃС‚ РІС‹РІРµСЂРЅСѓР» РІР°Рј СЂСѓРєСѓ РїСЂРѕСЃС‚Рѕ С‚Р°Рє, РµС‘ Р±С‹СЃС‚СЂРѕ РІРїСЂР°РІРёР»Рё, РЅРѕ РІС‹ РїРѕС‚РµСЂСЏР»Рё РЅРµСЃРёР»СЊРЅРѕ РјРЅРѕРіРѕ СѓСЂРѕРЅР°");
                     player.Damage -= 2;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Плюсист начал пояснять вам за указатели, вы сошли с ума и потеряли интеллект");
+                    MessageBox.Show("РџР»СЋСЃРёСЃС‚ РЅР°С‡Р°Р» РїРѕСЏСЃРЅСЏС‚СЊ РІР°Рј Р·Р° СѓРєР°Р·Р°С‚РµР»Рё, РІС‹ СЃРѕС€Р»Рё СЃ СѓРјР° Рё РїРѕС‚РµСЂСЏР»Рё РёРЅС‚РµР»Р»РµРєС‚");
                     player.Intelligence -= 2;
                 }
             }
 
-            if (player.RankName == "Сишарпист")
+            if (player.RankName == "РЎРёС€Р°СЂРїРёСЃС‚")
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Ассемблер толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья");
+                    MessageBox.Show("РђСЃСЃРµРјР±Р»РµСЂ С‚РѕР»РєРЅСѓР» РІР°СЃ, РІС‹ СѓРґР°СЂРёР»РёСЃСЊ РіРѕР»РѕРІРѕР№ РѕР± СЃС‚РµРЅРєСѓ Рё РїРѕС‚РµСЂСЏР»Рё РЅРµСЃРёР»СЊРЅРѕ РјРЅРѕРіРѕ Р·РґРѕСЂРѕРІСЊСЏ");
                     player.Health -= 3;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("РџР»СЋСЃРёСЃС‚ СЂРµС€РёР» РїРѕРёР·РґРµРІР°С‚СЊСЃСЏ РЅР°Рґ РІР°РјРё, Р±РµРіР°СЏ Р·Р° РІР°РјРё СЃ Р·Р°С‚РѕС‡РєРѕР№. Р’С‹ СЃРјРѕРіР»Рё СѓР±РµР¶Р°С‚СЊ, РЅРѕ СѓРґРµСЂР°Р»Рё С‚Р°Рє РґРѕР»РіРѕ, С‡С‚Рѕ РІР°С€Р° Р»РѕРІРєРѕСЃС‚СЊ СЃРЅРёР·РёР»Р°СЃСЊ");
                     player.Agility -= 2;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Плюсист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона");
+                    MessageBox.Show("РџР»СЋСЃРёСЃС‚ РІС‹РІРµСЂРЅСѓР» РІР°Рј СЂСѓРєСѓ РїСЂРѕСЃС‚Рѕ С‚Р°Рє, РµС‘ Р±С‹СЃС‚СЂРѕ РІРїСЂР°РІРёР»Рё, РЅРѕ РІС‹ РїРѕС‚РµСЂСЏР»Рё РЅРµСЃРёР»СЊРЅРѕ РјРЅРѕРіРѕ СѓСЂРѕРЅР°");
                     player.Damage -= 2;
                 }               
             }
 
-            if (player.RankName == "Плюсист")
+            if (player.RankName == "РџР»СЋСЃРёСЃС‚")
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Ассемблер толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья");
+                    MessageBox.Show("РђСЃСЃРµРјР±Р»РµСЂ С‚РѕР»РєРЅСѓР» РІР°СЃ, РІС‹ СѓРґР°СЂРёР»РёСЃСЊ РіРѕР»РѕРІРѕР№ РѕР± СЃС‚РµРЅРєСѓ Рё РїРѕС‚РµСЂСЏР»Рё РЅРµСЃРёР»СЊРЅРѕ РјРЅРѕРіРѕ Р·РґРѕСЂРѕРІСЊСЏ");
                     player.Health -= 3;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Ассемблер решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("РђСЃСЃРµРјР±Р»РµСЂ СЂРµС€РёР» РїРѕРёР·РґРµРІР°С‚СЊСЃСЏ РЅР°Рґ РІР°РјРё, Р±РµРіР°СЏ Р·Р° РІР°РјРё СЃ Р·Р°С‚РѕС‡РєРѕР№. Р’С‹ СЃРјРѕРіР»Рё СѓР±РµР¶Р°С‚СЊ, РЅРѕ СѓРґРµСЂР°Р»Рё С‚Р°Рє РґРѕР»РіРѕ, С‡С‚Рѕ РІР°С€Р° Р»РѕРІРєРѕСЃС‚СЊ СЃРЅРёР·РёР»Р°СЃСЊ");
                     player.Damage -= 2;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект");
+                    MessageBox.Show("РђСЃСЃРµРјР±Р»РµСЂ РЅР°С‡Р°Р» РїРѕСЏСЃРЅСЏС‚СЊ РІР°Рј Р·Р° СЃРІРѕР№ СЏР·С‹Рє, РІС‹ СЃРѕС€Р»Рё СЃ СѓРјР° Рё РїРѕС‚РµСЂСЏР»Рё РёРЅС‚РµР»Р»РµРєС‚");
                     player.Intelligence -= 3;
                 }
             }
