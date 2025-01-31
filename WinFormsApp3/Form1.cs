@@ -30,7 +30,7 @@ namespace WinFormsApp3
             TimeTableLabel.Text = TimeTables[0];
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (i != 8)
             {
@@ -53,7 +53,7 @@ namespace WinFormsApp3
 
                     if (SneakAttackChance <= 35)
                     {
-                        SneakAttackToYou();
+                        AsyncSneakAttackToYou();
                     }
                     else
                     {
@@ -65,7 +65,7 @@ namespace WinFormsApp3
                     //Завтрак
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
-                    Regeniration();
+                    AsyncRegeniration();
 
 
                     break;
@@ -79,12 +79,12 @@ namespace WinFormsApp3
                     //Работа
 
                     pictureBoxLocation.Image = Properties.Resources.work;
-                    MessageBox.Show($"Вы заработали на работе: {player.Salary} рублей");
+                    MessageBox.Show($"Вы заработали на работе: {player.Salary} рублей", "Работа", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     player.Money += player.Salary;
 
                     if (SneakAttackChance <= 35)
                     {
-                        SneakAttackToYou();
+                        AsyncSneakAttackToYou();
                     }
                     else
                     {
@@ -96,7 +96,7 @@ namespace WinFormsApp3
                     //Обед
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
-                    Regeniration();
+                    AsyncRegeniration();
                     break;
                 case 5:
                     //Cвободное Время
@@ -106,7 +106,7 @@ namespace WinFormsApp3
                 case 6:
                     //Ужин
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
-                    Regeniration();
+                    AsyncRegeniration();
                     break;
                 case 7:
                     //Подготовка ко сну
@@ -118,7 +118,7 @@ namespace WinFormsApp3
 
                     if (SneakAttackChance <= 35)
                     {
-                        SneakAttackToYou();
+                        AsyncSneakAttackToYou();
                     }
                     else
                     {
@@ -131,7 +131,7 @@ namespace WinFormsApp3
 
 
         }
-        public void Test()
+        void Test()
         {
             int testPoints = 0;
 
@@ -199,7 +199,7 @@ namespace WinFormsApp3
             questes.FirstQuest();
         }
 
-        public void SneakAttackToYou()
+        void SneakAttackToYou()
         {
             int randomSA = random.Next(1, 100);
             if (player.RankName == "Паскаль")
@@ -312,7 +312,7 @@ namespace WinFormsApp3
                 }
             }
         }
-         public void Regeniration()
+         void Regeniration()
          {
             if (player.RankName == "Паскаль")
             {
@@ -362,7 +362,17 @@ namespace WinFormsApp3
                 player.Intelligence = 9;
             }
 
-            MessageBox.Show($"Статистика восстановлена", "Восстановление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           MessageBox.Show($"Статистика восстановлена", "Восстановление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        async Task AsyncRegeniration()
+        {
+            await Task.Run(Regeniration);
+        }
+
+        async Task AsyncSneakAttackToYou()
+        {
+            await Task.Run(SneakAttackToYou);
         }
     }
 }
