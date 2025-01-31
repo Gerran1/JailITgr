@@ -33,6 +33,10 @@
             button1 = new Button();
             label1 = new Label();
             pictureBox2 = new PictureBox();
+            buttonLibrary = new Button();
+            buttonTheif = new Button();
+            listBoxBooks = new ListBox();
+            buttonBuy = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -95,12 +99,66 @@
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
+            // buttonLibrary
+            // 
+            buttonLibrary.FlatStyle = FlatStyle.Popup;
+            buttonLibrary.ForeColor = Color.Gold;
+            buttonLibrary.Location = new Point(9, 415);
+            buttonLibrary.Name = "buttonLibrary";
+            buttonLibrary.Size = new Size(81, 23);
+            buttonLibrary.TabIndex = 6;
+            buttonLibrary.Text = "Библеотека";
+            buttonLibrary.TextAlign = ContentAlignment.BottomCenter;
+            buttonLibrary.UseVisualStyleBackColor = true;
+            buttonLibrary.Click += buttonLibrary_Click;
+            // 
+            // buttonTheif
+            // 
+            buttonTheif.FlatStyle = FlatStyle.Popup;
+            buttonTheif.ForeColor = Color.Gold;
+            buttonTheif.Location = new Point(9, 197);
+            buttonTheif.Name = "buttonTheif";
+            buttonTheif.Size = new Size(81, 23);
+            buttonTheif.TabIndex = 7;
+            buttonTheif.Text = "Своровать";
+            buttonTheif.UseVisualStyleBackColor = true;
+            buttonTheif.Click += buttonTheif_Click;
+            // 
+            // listBoxBooks
+            // 
+            listBoxBooks.BackColor = Color.Maroon;
+            listBoxBooks.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            listBoxBooks.ForeColor = Color.Gold;
+            listBoxBooks.FormattingEnabled = true;
+            listBoxBooks.ItemHeight = 20;
+            listBoxBooks.Location = new Point(176, -1);
+            listBoxBooks.Name = "listBoxBooks";
+            listBoxBooks.Size = new Size(624, 124);
+            listBoxBooks.TabIndex = 8;
+            // 
+            // buttonBuy
+            // 
+            buttonBuy.FlatStyle = FlatStyle.Popup;
+            buttonBuy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonBuy.ForeColor = Color.Gold;
+            buttonBuy.Location = new Point(176, 121);
+            buttonBuy.Name = "buttonBuy";
+            buttonBuy.Size = new Size(75, 31);
+            buttonBuy.TabIndex = 9;
+            buttonBuy.Text = "Купить";
+            buttonBuy.UseVisualStyleBackColor = true;
+            buttonBuy.Click += buttonBuy_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Maroon;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonBuy);
+            Controls.Add(listBoxBooks);
+            Controls.Add(buttonTheif);
+            Controls.Add(buttonLibrary);
             Controls.Add(pictureBox2);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -121,5 +179,9 @@
         private Button button1;
         private Label label1;
         private PictureBox pictureBox2;
+        private Button buttonLibrary;
+        private Button buttonTheif;
+        private ListBox listBoxBooks;
+        private Button buttonBuy;
     }
 }
