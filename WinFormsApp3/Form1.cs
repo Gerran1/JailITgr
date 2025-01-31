@@ -65,6 +65,9 @@ namespace WinFormsApp3
                     //Завтрак
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
+                    Regeniration();
+
+
                     break;
                 case 2:
                     //Перекличка
@@ -93,6 +96,7 @@ namespace WinFormsApp3
                     //Обед
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
+                    Regeniration();
                     break;
                 case 5:
                     //Cвободное Время
@@ -101,8 +105,8 @@ namespace WinFormsApp3
                     break;
                 case 6:
                     //Ужин
-
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
+                    Regeniration();
                     break;
                 case 7:
                     //Подготовка ко сну
@@ -202,22 +206,22 @@ namespace WinFormsApp3
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Луанист толкнул вас, вы ударились головой об стенку и потеряли немного здоровья");
+                    MessageBox.Show("Луанист толкнул вас, вы ударились головой об стенку и потеряли немного здоровья","Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Health -= 1;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость немного снизилась");
+                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость немного снизилась", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Agility -= 1;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Питонист вывернул вам руку просто так, её быстро вправили, но вы потеряли немного урона");
+                    MessageBox.Show("Питонист вывернул вам руку просто так, её быстро вправили, но вы потеряли немного урона", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Damage -= 1;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Сишарпист начал пояснять вам за ООП, вы немного сошли с ума и потеряли немного интеллекта");
+                    MessageBox.Show("Сишарпист начал пояснять вам за ООП, вы немного сошли с ума и потеряли немного интеллекта", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Intelligence -= 1;
                 }
             }
@@ -226,22 +230,22 @@ namespace WinFormsApp3
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Луанист толкнул вас, вы ударились головой об пол и потеряли много здоровья");
+                    MessageBox.Show("Луанист толкнул вас, вы ударились головой об пол и потеряли много здоровья", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Health -= 3;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Agility -= 2;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("От злости, что вы не смогли написать нормальный код, вы ударили ноутбук, ноутбук не пострадал в отличии от ваше руки. Ваш урон снизился");
+                    MessageBox.Show("От злости, что вы не смогли написать нормальный код, вы ударили ноутбук, ноутбук не пострадал в отличии от ваше руки. Ваш урон снизился", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Damage -= 2;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект");
+                    MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Intelligence -= 2;
                 }
             }
@@ -250,22 +254,22 @@ namespace WinFormsApp3
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Сишарпист толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья");
+                    MessageBox.Show("Сишарпист толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Health -= 2;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Agility -= 2;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Сишарпист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона");
+                    MessageBox.Show("Сишарпист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Damage -= 2;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Плюсист начал пояснять вам за указатели, вы сошли с ума и потеряли интеллект");
+                    MessageBox.Show("Плюсист начал пояснять вам за указатели, вы сошли с ума и потеряли интеллект", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Intelligence -= 2;
                 }
             }
@@ -274,17 +278,17 @@ namespace WinFormsApp3
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Ассемблер толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья");
+                    MessageBox.Show("Ассемблер толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Health -= 3;
                 }
                 else if (randomSA <= 75 && randomSA >= 50 && player.Agility > 0)
                 {
-                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("Плюсист решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Agility -= 2;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Плюсист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона");
+                    MessageBox.Show("Плюсист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Damage -= 2;
                 }               
             }
@@ -293,21 +297,72 @@ namespace WinFormsApp3
             {
                 if (randomSA <= 100 && randomSA >= 75 && player.Health > 0)
                 {
-                    MessageBox.Show("Ассемблер толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья");
+                    MessageBox.Show("Ассемблер толкнул вас, вы ударились головой об стенку и потеряли несильно много здоровья", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Health -= 3;
                 }
                 else if (randomSA <= 50 && randomSA >= 25 && player.Damage > 0)
                 {
-                    MessageBox.Show("Ассемблер решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась");
+                    MessageBox.Show("Ассемблер решил поиздеваться над вами, бегая за вами с заточкой. Вы смогли убежать, но удерали так долго, что ваша ловкость снизилась", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Damage -= 2;
                 }
                 else if (randomSA <= 25 && randomSA >= 0 && player.Intelligence > 0)
                 {
-                    MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект");
+                    MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     player.Intelligence -= 3;
                 }
             }
         }
+         public void Regeniration()
+         {
+            if (player.RankName == "Паскаль")
+            {
+                player.Health = 3;
+                player.Damage = 3;
+                player.Agility = 3;
+                player.Intelligence = 3;
+            }
 
+            if (player.RankName == "Питонист")
+            {
+                player.Health = 8;
+                player.Damage = 2;
+                player.Agility = 7;
+                player.Intelligence = 5;
+            }
+
+            if (player.RankName == "Луанист")
+            {
+                player.Health = 5;
+                player.Damage = 5;
+                player.Agility = 7;
+                player.Intelligence = 5;
+            }
+
+            if (player.RankName == "Сишарпист")
+            {
+                player.Health = 7;
+                player.Damage = 6;
+                player.Agility = 5;
+                player.Intelligence = 6;
+            }
+
+            if (player.RankName == "Плюсист")
+            {
+                player.Health = 7;
+                player.Damage = 6;
+                player.Agility = 6;
+                player.Intelligence = 7;
+            }
+
+            if (player.RankName == "Ассемблер")
+            {
+                player.Health = 9;
+                player.Damage = 9;
+                player.Agility = 9;
+                player.Intelligence = 9;
+            }
+
+            MessageBox.Show($"Статистика восстановлена", "Восстановление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
