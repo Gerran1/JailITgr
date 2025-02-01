@@ -22,8 +22,8 @@ namespace WinFormsApp3
         static Classes.IPrisoner cppAdapter = new Classes.CppAdapter(cpp);
         static Classes.IPrisoner assemblyAdapter = new Classes.AssemblyAdapter(assembly);
         Classes.Player player;
-        Questes questes = new Questes();
 
+        Questes questes = new Questes();
 
         static int Money = 0;
         int Days = 0;
@@ -32,7 +32,6 @@ namespace WinFormsApp3
         int RankPoints = 0;
         int ComissionPercent = 0;
         bool IsArested = false;
-
 
         List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
 
@@ -54,7 +53,6 @@ namespace WinFormsApp3
         };
 
         Dictionary<int, string> Inventory = new Dictionary<int, string>() { };
-
 
         public Form1()
         {
@@ -84,10 +82,13 @@ namespace WinFormsApp3
                 string item = $"{book.Value}" + $" за {book.Key} руб.";
                 listBoxBooks.Items.Add(item);
             }
+
+            
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            
             if (i != 8)
             {
                 i++;
@@ -101,6 +102,7 @@ namespace WinFormsApp3
             switch (i)
             {
                 case 0:
+                    //подъём
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -114,11 +116,21 @@ namespace WinFormsApp3
                     buttonGym.Visible = false;
 
                     IsArested = false;
-                    //подъём
-
+                    
+                    
+                    if (player.RankName == "Ассемблер")
+                    {
+                        DialogResult dr = MessageBox.Show("Вы желаете стать вором в законе?(конец игры)", "\"Конец?\"", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if(dr == DialogResult.Yes)
+                        {
+                            MessageBox.Show("Вы смогли стать вором в законе, выйдя из тюрьми \"ITgr\" по блату.", "\"Конец.\"", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            Application.Exit();
+                        }
+                    }
                     SneakAttackChance = random2.Next(1, 100);
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     Days += 1;
+
                     switch (RankPoints)
                     {
                         case 2:
@@ -147,8 +159,10 @@ namespace WinFormsApp3
                             pictureBox2.Image = Properties.Resources.assembler;
                             break;
                     }
+                    IsDeath();
                     break;
                 case 1:
+                    //Завтрак
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -160,14 +174,15 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Завтрак
+                    
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
 
-
+                    IsDeath();
                     break;
                 case 2:
+                    //Перекличка
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -179,12 +194,14 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Перекличка
+                    
 
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     MessageBox.Show($"Дней в тюрьме: {Days}\n Деньги: {player.Money}\n Масть: {player.RankName} \n Здоровье: {player.Health} \n Урон: {player.Damage} \n Ловкость: {player.Agility} \n Интеллект: {player.Intelligence} \n Зарплата: {player.Salary} руб.\n", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IsDeath();
                     break;
                 case 3:
+                    //Работа
                     if (player.RankName == "Сишарпист" || player.RankName == "Плюсист" && IsArested == false)
                     {
                         buttonTheif.Enabled = true;
@@ -210,7 +227,7 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Работа
+                    
 
                     pictureBoxLocation.Image = Properties.Resources.work;
 
@@ -227,9 +244,10 @@ namespace WinFormsApp3
                     {
                         MessageBox.Show("Работа прошла без происшествий");
                     }
-
+                    IsDeath();
                     break;
                 case 4:
+                    //Обед
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -241,19 +259,21 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Обед
+                    
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     AsyncRegeniration();
+                    IsDeath();
                     break;
                 case 5:
+                    //Cвободное Время
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     listBoxBooks.Visible = false;
                     listBoxBooks.Enabled = true;
-                    //Cвободное Время
+                    
                     if (player.RankName == "Сишарпист" || player.RankName == "Плюсист")
                     {
                         buttonTrade.Enabled = true;
@@ -264,8 +284,10 @@ namespace WinFormsApp3
                     buttonLibrary.Visible = true;
                     buttonGym.Enabled = true;
                     buttonGym.Visible = true;
+                    IsDeath();
                     break;
                 case 6:
+                    //Ужин
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -277,11 +299,13 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Ужин
+                    
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
+                    IsDeath();
                     break;
                 case 7:
+                    //Подготовка ко сну
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -293,7 +317,7 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Подготовка ко сну
+                    
 
                     pictureBoxLocation.Image = Properties.Resources.shower;
                     int badthingsRandom = random.Next(1, 100);
@@ -310,8 +334,10 @@ namespace WinFormsApp3
                     }
                     else
                         MessageBox.Show("Вы спокойно помылись.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IsDeath();
                     break;
                 case 8:
+                    //Сон
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
@@ -323,8 +349,7 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    //Сон
-
+                    
                     if (SneakAttackChance <= 35)
                     {
                         AsyncSneakAttackToYou();
@@ -333,12 +358,10 @@ namespace WinFormsApp3
                     {
                         MessageBox.Show("Сон прошёл без происшествий");
                     }
-
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
+                    IsDeath();
                     break;
             }
-
-
         }
         void Test()
         {
@@ -410,7 +433,6 @@ namespace WinFormsApp3
             }
             questes.FirstQuest();
         }
-
         void SneakAttackToYou()
         {
             int randomSA = random.Next(1, 100);
@@ -437,6 +459,7 @@ namespace WinFormsApp3
                         MessageBox.Show("Сишарпист начал пояснять вам за ООП, вы немного сошли с ума и потеряли немного интеллекта", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         player.Intelligence -= 1;
                     }
+                    IsDeath();
                     break;
 
                 case "Питонист":
@@ -460,6 +483,7 @@ namespace WinFormsApp3
                         MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         player.Intelligence -= 2;
                     }
+                    IsDeath();
                     break;
 
                 case "Луанист":
@@ -483,6 +507,7 @@ namespace WinFormsApp3
                         MessageBox.Show("Плюсист начал пояснять вам за указатели, вы сошли с ума и потеряли интеллект", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         player.Intelligence -= 2;
                     }
+                    IsDeath();
                     break;
 
                 case "Сишарпист":
@@ -501,6 +526,7 @@ namespace WinFormsApp3
                         MessageBox.Show("Плюсист вывернул вам руку просто так, её быстро вправили, но вы потеряли несильно много урона", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         player.Damage -= 2;
                     }
+                    IsDeath();
                     break;
 
                 case "Плюсист":
@@ -519,6 +545,7 @@ namespace WinFormsApp3
                         MessageBox.Show("Ассемблер начал пояснять вам за свой язык, вы сошли с ума и потеряли интеллект", "Подлянка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         player.Intelligence -= 3;
                     }
+                    IsDeath();
                     break;
             }
         }
@@ -567,17 +594,14 @@ namespace WinFormsApp3
 
             MessageBox.Show($"Статистика восстановлена", "Восстановление", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         async Task AsyncRegeniration()
         {
             await Task.Run(Regeniration);
         }
-
         async Task AsyncSneakAttackToYou()
         {
             await Task.Run(SneakAttackToYou);
         }
-
         void Theif()
         {
             int chance = 0;
@@ -650,19 +674,25 @@ namespace WinFormsApp3
                     MessageBox.Show("Все ваши вещи были конфискованы.", "Жадность фраера сгубила!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Inventory.Clear();
                 }
+                IsDeath();
             }
         }
-
+        void IsDeath()
+        {
+            if (player.Health <= 0 || player.Damage <= 0 || player.Agility <= 0 || player.Agility <= 0 || player.Intelligence <= 0)
+            {
+                MessageBox.Show("Одна из ваших характеристик опустилась до нуля. Вы погибли", "Смерть.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+        }
         private void Button1_Click(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
-
         private void buttonTheif_Click(object sender, EventArgs e)
         {
             Theif();
         }
-
         private void buttonLibrary_Click(object sender, EventArgs e)
         {
             pictureBoxLocation.Image = Properties.Resources.library;
@@ -672,7 +702,6 @@ namespace WinFormsApp3
 
 
         }
-
         private void buttonBuy_Click(object sender, EventArgs e)
         {
 
@@ -897,7 +926,6 @@ namespace WinFormsApp3
                     break;
             }
         }
-
         private void buttonTrade_Click(object sender, EventArgs e)
         {
             if (Inventory.Count != 0)
@@ -929,7 +957,6 @@ namespace WinFormsApp3
             else
                 MessageBox.Show($"У вас нет товара на продажу", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void buttonGym_Click(object sender, EventArgs e)
         {
             listBoxBooks.Visible = false;
