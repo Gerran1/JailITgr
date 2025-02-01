@@ -38,6 +38,7 @@
             listBoxBooks = new ListBox();
             buttonBuy = new Button();
             buttonTrade = new Button();
+            buttonGym = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -146,7 +147,7 @@
             // buttonBuy
             // 
             buttonBuy.FlatStyle = FlatStyle.Popup;
-            buttonBuy.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            buttonBuy.Font = new Font("Ink Free", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             buttonBuy.ForeColor = Color.LavenderBlush;
             buttonBuy.Location = new Point(176, 121);
             buttonBuy.Name = "buttonBuy";
@@ -170,12 +171,26 @@
             buttonTrade.UseVisualStyleBackColor = false;
             buttonTrade.Click += buttonTrade_Click;
             // 
+            // buttonGym
+            // 
+            buttonGym.FlatStyle = FlatStyle.Popup;
+            buttonGym.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            buttonGym.ForeColor = Color.LavenderBlush;
+            buttonGym.Location = new Point(9, 386);
+            buttonGym.Name = "buttonGym";
+            buttonGym.Size = new Size(88, 23);
+            buttonGym.TabIndex = 11;
+            buttonGym.Text = "Качалка";
+            buttonGym.UseVisualStyleBackColor = true;
+            buttonGym.Click += buttonGym_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonGym);
             Controls.Add(buttonTrade);
             Controls.Add(buttonBuy);
             Controls.Add(listBoxBooks);
@@ -206,5 +221,6 @@
         private ListBox listBoxBooks;
         private Button buttonBuy;
         private Button buttonTrade;
+        private Button buttonGym;
     }
 }

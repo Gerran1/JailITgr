@@ -76,6 +76,9 @@ namespace WinFormsApp3
             buttonTrade.Enabled = false;
             buttonTrade.Visible = false;
 
+            buttonGym.Enabled = false;
+            buttonGym.Visible = false;
+
             foreach (var book in Books)
             {
                 string item = $"{book.Value}" + $" за {book.Key} руб.";
@@ -107,6 +110,8 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
 
                     IsArested = false;
                     //подъём
@@ -153,6 +158,8 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Завтрак
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
@@ -170,6 +177,8 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Перекличка
 
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
@@ -190,7 +199,7 @@ namespace WinFormsApp3
                     {
                         buttonTheif.Enabled = false;
                         buttonTheif.Visible = false;
-  
+
                     }
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
@@ -199,6 +208,8 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Работа
 
                     pictureBoxLocation.Image = Properties.Resources.work;
@@ -228,6 +239,8 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Обед
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
@@ -249,6 +262,8 @@ namespace WinFormsApp3
                     pictureBoxLocation.Image = Properties.Resources.street;
                     buttonLibrary.Enabled = true;
                     buttonLibrary.Visible = true;
+                    buttonGym.Enabled = true;
+                    buttonGym.Visible = true;
                     break;
                 case 6:
                     buttonTheif.Enabled = false;
@@ -260,6 +275,8 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Ужин
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
@@ -274,15 +291,17 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Подготовка ко сну
 
                     pictureBoxLocation.Image = Properties.Resources.shower;
                     int badthingsRandom = random.Next(1, 100);
 
-                    if(badthingsRandom >= 0 && badthingsRandom < 20)
+                    if (badthingsRandom >= 0 && badthingsRandom < 20)
                     {
                         MessageBox.Show("Во время душа вы случайно уранили лямбда мыло, вы нагнулись за ним. Дальше кто-то подошал к вам сзади...", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        if(player.Agility >= 6 && player.Damage >= 5)
+                        if (player.Agility >= 6 && player.Damage >= 5)
                         {
                             MessageBox.Show("но вы смогли резка дать отпор паскальщику.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -302,6 +321,8 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
+                    buttonGym.Enabled = false;
+                    buttonGym.Visible = false;
                     //Сон
 
                     if (SneakAttackChance <= 35)
@@ -617,14 +638,14 @@ namespace WinFormsApp3
             }
             else
             {
-                MessageBox.Show("Ваc поимали на воровстве и посадили в карцер. Вы провели там неделю.", "В карцер!",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ваc поимали на воровстве и посадили в карцер. Вы провели там неделю.", "В карцер!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 IsArested = true;
                 Days += 7;
                 player.Health -= 1;
                 player.Agility -= 1;
                 player.Damage -= 1;
                 player.Intelligence -= 1;
-                if(Inventory.Count > 0) 
+                if (Inventory.Count > 0)
                 {
                     MessageBox.Show("Все ваши вещи были конфискованы.", "Жадность фраера сгубила!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Inventory.Clear();
@@ -668,62 +689,62 @@ namespace WinFormsApp3
             {
                 case "Питон Том I за 550 руб.":
 
-                        if (player.Money < 550)
-                        {
-                            MessageBox.Show("У вас недостаточно денег");
-                            break;
-                        }
-                        else if (player.RankName == "Питонист" || player.RankName == "Луанист")
-                        {
-                            MessageBox.Show("У вас уже есть знания из этой книги");
-                            break;
-                        }
-                        else
-                            player.Money -= 550;
-                            MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                            RankPoints += 1;
-                            listBoxBooks.Items.Remove(selectedbook);
-                            MessageBox.Show($"Денег: {player.Money} руб.");
+                    if (player.Money < 550)
+                    {
+                        MessageBox.Show("У вас недостаточно денег");
+                        break;
+                    }
+                    else if (player.RankName == "Питонист" || player.RankName == "Луанист")
+                    {
+                        MessageBox.Show("У вас уже есть знания из этой книги");
+                        break;
+                    }
+                    else
+                        player.Money -= 550;
+                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                    RankPoints += 1;
+                    listBoxBooks.Items.Remove(selectedbook);
+                    MessageBox.Show($"Денег: {player.Money} руб.");
 
                     break;
                 case "Питон Том II за 700 руб.":
 
-                        if (player.Money < 700)
-                        {
-                            MessageBox.Show("У вас недостаточно денег");
-                            break;
-                        }
-                        else if (player.RankName == "Питонист" || player.RankName == "Луанист")
-                        {
-                            MessageBox.Show("У вас уже есть знания из этой книги");
-                            break;
-                        }
-                        else
-                                player.Money -= 700;
-                                MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                                RankPoints += 1;
-                                listBoxBooks.Items.Remove(selectedbook);
-                                MessageBox.Show($"Денег: {player.Money} руб.");
+                    if (player.Money < 700)
+                    {
+                        MessageBox.Show("У вас недостаточно денег");
+                        break;
+                    }
+                    else if (player.RankName == "Питонист" || player.RankName == "Луанист")
+                    {
+                        MessageBox.Show("У вас уже есть знания из этой книги");
+                        break;
+                    }
+                    else
+                        player.Money -= 700;
+                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                    RankPoints += 1;
+                    listBoxBooks.Items.Remove(selectedbook);
+                    MessageBox.Show($"Денег: {player.Money} руб.");
 
                     break;
                 case "Луа: Исповедь Roblox за 890 руб.":
 
-                        if (player.Money < 890)
-                        {
-                            MessageBox.Show("У вас недостаточно денег");
-                            break;
-                        }
-                        else if (player.RankName == "Луанист")
-                        {
-                            MessageBox.Show("У вас уже есть знания из этой книги");
-                            break;
-                        }
-                        else
-                                player.Money -= 890;
-                                MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                                RankPoints += 1;
-                                listBoxBooks.Items.Remove(selectedbook);
-                                MessageBox.Show($"Денег: {player.Money} руб.");
+                    if (player.Money < 890)
+                    {
+                        MessageBox.Show("У вас недостаточно денег");
+                        break;
+                    }
+                    else if (player.RankName == "Луанист")
+                    {
+                        MessageBox.Show("У вас уже есть знания из этой книги");
+                        break;
+                    }
+                    else
+                        player.Money -= 890;
+                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                    RankPoints += 1;
+                    listBoxBooks.Items.Remove(selectedbook);
+                    MessageBox.Show($"Денег: {player.Money} руб.");
 
                     break;
                 case "Основы OOП за 1000 руб.":
@@ -900,13 +921,21 @@ namespace WinFormsApp3
                     Comissoin = (MoneyTrade / 100) * ComissionPercent;
                     MoneyTrade -= Comissoin;
                 }
-                               
+
                 MessageBox.Show($"Вы продали все товары");
                 MessageBox.Show($"Ваша выручка с продажи составила: {MoneyTrade} руб.", "Вы заработали", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MoneyTrade += player.Money;
             }
             else
                 MessageBox.Show($"У вас нет товара на продажу", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void buttonGym_Click(object sender, EventArgs e)
+        {
+            listBoxBooks.Visible = false;
+            buttonBuy.Visible = false;
+            
+            pictureBoxLocation.Image = Properties.Resources.gym;
         }
     }
 }
