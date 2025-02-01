@@ -276,7 +276,21 @@ namespace WinFormsApp3
                     buttonTrade.Visible = false;
                     //Подготовка ко сну
 
-                    pictureBoxLocation.Image = Properties.Resources.prison_cell;
+                    pictureBoxLocation.Image = Properties.Resources.shower;
+                    int badthingsRandom = random.Next(1, 100);
+
+                    if(badthingsRandom >= 0 && badthingsRandom < 20)
+                    {
+                        MessageBox.Show("Во время душа вы случайно уранили лямбда мыло, вы нагнулись за ним. Дальше кто-то подошал к вам сзади...", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if(player.Agility >= 6 && player.Damage >= 5)
+                        {
+                            MessageBox.Show("но вы смогли резка дать отпор паскальщику.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("и вы не успели среагировать и произошло кое что ужасное. Ваша репутация подкасилась.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Вы спокойно помылись.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 8:
                     buttonTheif.Enabled = false;
@@ -331,7 +345,7 @@ namespace WinFormsApp3
                 testPoints += 1;
             }
 
-            dr = MessageBox.Show("Чужой код воровал", "Третий вопрос?", MessageBoxButtons.YesNo);
+            dr = MessageBox.Show("Чужой код воровал?", "Третий вопрос", MessageBoxButtons.YesNo);
 
             if (dr == DialogResult.Yes)
             {
@@ -603,13 +617,18 @@ namespace WinFormsApp3
             }
             else
             {
-                MessageBox.Show("Ваc поимали на воровстве и посадили в карцер. Вы провели там неделю.");
+                MessageBox.Show("Ваc поимали на воровстве и посадили в карцер. Вы провели там неделю.", "В карцер!",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 IsArested = true;
                 Days += 7;
                 player.Health -= 1;
                 player.Agility -= 1;
                 player.Damage -= 1;
                 player.Intelligence -= 1;
+                if(Inventory.Count > 0) 
+                {
+                    MessageBox.Show("Все ваши вещи были конфискованы.", "Жадность фраера сгубила!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Inventory.Clear();
+                }
             }
         }
 
