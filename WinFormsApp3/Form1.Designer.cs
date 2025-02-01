@@ -37,6 +37,7 @@
             buttonTheif = new Button();
             listBoxBooks = new ListBox();
             buttonBuy = new Button();
+            buttonTrade = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -55,20 +56,20 @@
             // TimeTableLabel
             // 
             TimeTableLabel.AutoSize = true;
-            TimeTableLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            TimeTableLabel.ForeColor = Color.Gold;
+            TimeTableLabel.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            TimeTableLabel.ForeColor = Color.LavenderBlush;
             TimeTableLabel.Location = new Point(9, 30);
             TimeTableLabel.Name = "TimeTableLabel";
-            TimeTableLabel.Size = new Size(16, 21);
+            TimeTableLabel.Size = new Size(12, 15);
             TimeTableLabel.TabIndex = 2;
             TimeTableLabel.Text = "-";
             // 
             // button1
             // 
-            button1.BackColor = Color.Maroon;
+            button1.BackColor = Color.SlateGray;
             button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Baskerville Old Face", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Gold;
+            button1.Font = new Font("Ink Free", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            button1.ForeColor = Color.LavenderBlush;
             button1.Location = new Point(705, 397);
             button1.Name = "button1";
             button1.Size = new Size(83, 41);
@@ -80,57 +81,63 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.ForeColor = Color.Gold;
+            label1.BackColor = Color.LightSlateGray;
+            label1.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            label1.ForeColor = Color.LavenderBlush;
             label1.Location = new Point(9, 9);
             label1.Name = "label1";
-            label1.Size = new Size(100, 21);
+            label1.Size = new Size(84, 15);
             label1.TabIndex = 4;
             label1.Text = "Расписание: ";
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.Gold;
+            pictureBox2.BackColor = Color.LavenderBlush;
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Image = Properties.Resources.Lua;
             pictureBox2.Location = new Point(9, 54);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(138, 137);
+            pictureBox2.Size = new Size(137, 137);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
             // buttonLibrary
             // 
+            buttonLibrary.BackColor = Color.SlateGray;
             buttonLibrary.FlatStyle = FlatStyle.Popup;
-            buttonLibrary.ForeColor = Color.Gold;
+            buttonLibrary.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            buttonLibrary.ForeColor = Color.LavenderBlush;
             buttonLibrary.Location = new Point(9, 415);
             buttonLibrary.Name = "buttonLibrary";
-            buttonLibrary.Size = new Size(81, 23);
+            buttonLibrary.Size = new Size(88, 23);
             buttonLibrary.TabIndex = 6;
             buttonLibrary.Text = "Библеотека";
             buttonLibrary.TextAlign = ContentAlignment.BottomCenter;
-            buttonLibrary.UseVisualStyleBackColor = true;
+            buttonLibrary.UseVisualStyleBackColor = false;
             buttonLibrary.Click += buttonLibrary_Click;
             // 
             // buttonTheif
             // 
+            buttonTheif.BackColor = Color.SlateGray;
             buttonTheif.FlatStyle = FlatStyle.Popup;
-            buttonTheif.ForeColor = Color.Gold;
+            buttonTheif.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            buttonTheif.ForeColor = Color.LavenderBlush;
             buttonTheif.Location = new Point(9, 197);
             buttonTheif.Name = "buttonTheif";
             buttonTheif.Size = new Size(81, 23);
             buttonTheif.TabIndex = 7;
             buttonTheif.Text = "Своровать";
-            buttonTheif.UseVisualStyleBackColor = true;
+            buttonTheif.UseVisualStyleBackColor = false;
             buttonTheif.Click += buttonTheif_Click;
             // 
             // listBoxBooks
             // 
-            listBoxBooks.BackColor = Color.Maroon;
-            listBoxBooks.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            listBoxBooks.ForeColor = Color.Gold;
+            listBoxBooks.BackColor = Color.LightSeaGreen;
+            listBoxBooks.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            listBoxBooks.ForeColor = Color.LavenderBlush;
             listBoxBooks.FormattingEnabled = true;
-            listBoxBooks.ItemHeight = 20;
+            listBoxBooks.ItemHeight = 15;
             listBoxBooks.Location = new Point(176, -1);
             listBoxBooks.Name = "listBoxBooks";
             listBoxBooks.Size = new Size(624, 124);
@@ -139,8 +146,8 @@
             // buttonBuy
             // 
             buttonBuy.FlatStyle = FlatStyle.Popup;
-            buttonBuy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            buttonBuy.ForeColor = Color.Gold;
+            buttonBuy.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            buttonBuy.ForeColor = Color.LavenderBlush;
             buttonBuy.Location = new Point(176, 121);
             buttonBuy.Name = "buttonBuy";
             buttonBuy.Size = new Size(75, 31);
@@ -149,12 +156,27 @@
             buttonBuy.UseVisualStyleBackColor = true;
             buttonBuy.Click += buttonBuy_Click;
             // 
+            // buttonTrade
+            // 
+            buttonTrade.BackColor = Color.SlateGray;
+            buttonTrade.FlatStyle = FlatStyle.Popup;
+            buttonTrade.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
+            buttonTrade.ForeColor = Color.LavenderBlush;
+            buttonTrade.Location = new Point(96, 197);
+            buttonTrade.Name = "buttonTrade";
+            buttonTrade.Size = new Size(74, 23);
+            buttonTrade.TabIndex = 10;
+            buttonTrade.Text = "Продать";
+            buttonTrade.UseVisualStyleBackColor = false;
+            buttonTrade.Click += buttonTrade_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Maroon;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonTrade);
             Controls.Add(buttonBuy);
             Controls.Add(listBoxBooks);
             Controls.Add(buttonTheif);
@@ -183,5 +205,6 @@
         private Button buttonTheif;
         private ListBox listBoxBooks;
         private Button buttonBuy;
+        private Button buttonTrade;
     }
 }
