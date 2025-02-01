@@ -103,6 +103,16 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gide {
+            get {
+                object obj = ResourceManager.GetObject("gide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gym {
             get {
                 object obj = ResourceManager.GetObject("gym", resourceCulture);

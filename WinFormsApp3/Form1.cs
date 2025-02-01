@@ -106,10 +106,7 @@ namespace WinFormsApp3
                     {
                         AsyncSneakAttackToYou();
                     }
-                    else
-                    {
-                        MessageBox.Show("Всё прошло без происшествий");
-                    }
+
                     Days += 1;
                     switch (RankPoints)
                     {
@@ -581,6 +578,7 @@ namespace WinFormsApp3
                         else if (player.RankName == "Питонист" || player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
+                            listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
                         else
@@ -601,6 +599,7 @@ namespace WinFormsApp3
                         else if (player.RankName == "Питонист" || player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
+                            listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
                         else
@@ -621,6 +620,7 @@ namespace WinFormsApp3
                         else if (player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
+                            listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
                         else
