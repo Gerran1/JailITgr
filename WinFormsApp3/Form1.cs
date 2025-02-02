@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using static WinFormsApp3.Classes;
 
 namespace WinFormsApp3
@@ -32,6 +33,7 @@ namespace WinFormsApp3
         int RankPoints = 0;
         int ComissionPercent = 0;
         bool IsArested = false;
+        bool IsOpened = false;
 
         List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
 
@@ -52,7 +54,9 @@ namespace WinFormsApp3
             [4000] = "Исскусство программирование на Assembler Том III"
         };
 
-        Dictionary<int, string> Inventory = new Dictionary<int, string>() { };
+        Dictionary<int, string> TradeInventory = new Dictionary<int, string>() { };
+
+        List<string> BoxInventory = new List<string>(3) { };
 
         public Form1()
         {
@@ -67,6 +71,10 @@ namespace WinFormsApp3
 
             listBoxBooks.Enabled = true;
             listBoxBooks.Visible = false;
+            listBoxTradeInventory.Enabled = true;
+            listBoxTradeInventory.Visible = false;
+            listBoxInventoryBox.Enabled = true;
+            listBoxInventoryBox.Visible = false;
 
             buttonBuy.Enabled = false;
             buttonBuy.Visible = false;
@@ -77,18 +85,26 @@ namespace WinFormsApp3
             buttonGym.Enabled = false;
             buttonGym.Visible = false;
 
+            buttonStreet.Enabled = false;
+            buttonStreet.Visible = false;
+
+            buttonOpenBox.Enabled = false;
+            buttonOpenBox.Visible = false;
+
+            buttonPutItem.Visible = false;
+            buttonPutItem.Enabled = false;
             foreach (var book in Books)
             {
                 string item = $"{book.Value}" + $" за {book.Key} руб.";
                 listBoxBooks.Items.Add(item);
             }
 
-            
+
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            
+
             if (i != 8)
             {
                 i++;
@@ -108,20 +124,28 @@ namespace WinFormsApp3
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
+                    buttonOpenBox.Enabled = true;
+                    buttonOpenBox.Visible = true;
 
                     IsArested = false;
-                    
-                    
+
+
                     if (player.RankName == "Ассемблер")
                     {
                         DialogResult dr = MessageBox.Show("Вы желаете стать вором в законе?(конец игры)", "\"Конец?\"", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                        if(dr == DialogResult.Yes)
+                        if (dr == DialogResult.Yes)
                         {
                             MessageBox.Show("Вы смогли стать вором в законе, выйдя из тюрьми \"ITgr\" по блату.", "\"Конец.\"", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                             Application.Exit();
@@ -168,13 +192,21 @@ namespace WinFormsApp3
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonOpenBox.Enabled = false;
+                    buttonOpenBox.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
@@ -188,15 +220,25 @@ namespace WinFormsApp3
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
+                    buttonOpenBox.Enabled = true;
+                    buttonOpenBox.Visible = true;
+
 
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
+                    Shmon();
                     MessageBox.Show($"Дней в тюрьме: {Days}\n Деньги: {player.Money}\n Масть: {player.RankName} \n Здоровье: {player.Health} \n Урон: {player.Damage} \n Ловкость: {player.Agility} \n Интеллект: {player.Intelligence} \n Зарплата: {player.Salary} руб.\n", "Статистика", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     IsDeath();
                     break;
@@ -221,13 +263,21 @@ namespace WinFormsApp3
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonOpenBox.Enabled = false;
+                    buttonOpenBox.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
 
                     pictureBoxLocation.Image = Properties.Resources.work;
 
@@ -253,13 +303,21 @@ namespace WinFormsApp3
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonOpenBox.Enabled = false;
+                    buttonOpenBox.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     AsyncRegeniration();
@@ -273,17 +331,25 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     listBoxBooks.Visible = false;
                     listBoxBooks.Enabled = true;
-                    
+                    listBoxInventoryBox.Visible = false;
+
                     if (player.RankName == "Сишарпист" || player.RankName == "Плюсист")
                     {
                         buttonTrade.Enabled = true;
                         buttonTrade.Visible = true;
+                        listBoxTradeInventory.Visible = true;
                     }
                     pictureBoxLocation.Image = Properties.Resources.street;
                     buttonLibrary.Enabled = true;
                     buttonLibrary.Visible = true;
                     buttonGym.Enabled = true;
                     buttonGym.Visible = true;
+                    buttonStreet.Enabled = true;
+                    buttonStreet.Visible = true;
+                    buttonOpenBox.Enabled = false;
+                    buttonOpenBox.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
                     IsDeath();
                     break;
                 case 6:
@@ -295,11 +361,19 @@ namespace WinFormsApp3
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonOpenBox.Enabled = false;
+                    buttonOpenBox.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
                     IsDeath();
@@ -313,11 +387,17 @@ namespace WinFormsApp3
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
 
                     pictureBoxLocation.Image = Properties.Resources.shower;
                     int badthingsRandom = random.Next(1, 100);
@@ -325,7 +405,7 @@ namespace WinFormsApp3
                     if (badthingsRandom >= 0 && badthingsRandom < 20)
                     {
                         MessageBox.Show("Во время душа вы случайно уранили лямбда мыло, вы нагнулись за ним. Дальше кто-то подошал к вам сзади...", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        if (player.Agility >= 6 && player.Damage >= 5)
+                        if (player.Agility >= 5 && player.Damage >= 4)
                         {
                             MessageBox.Show("но вы смогли резка дать отпор паскальщику.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -345,11 +425,20 @@ namespace WinFormsApp3
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
                     buttonGym.Visible = false;
-                    
+                    buttonStreet.Enabled = false;
+                    buttonStreet.Visible = false;
+                    buttonPutItem.Visible = false;
+                    buttonPutItem.Enabled = false;
+
+                    buttonOpenBox.Enabled = true;
+                    buttonOpenBox.Visible = true;
+
                     if (SneakAttackChance <= 35)
                     {
                         AsyncSneakAttackToYou();
@@ -620,44 +709,54 @@ namespace WinFormsApp3
             {
                 if (randomItem >= 90 && randomItem <= 100)
                 {
-                    Inventory[100] = "Синтаксический сахар";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[100]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[100] = "Синтаксический сахар";
+                    listBoxTradeInventory.Items.Add(TradeInventory[100]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[100]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (randomItem >= 80 && randomItem <= 90)
                 {
-                    Inventory[120] = "Пачка сигарет \"Git\"";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[120]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[120] = "Пачка сигарет \"Git\"";
+                    listBoxTradeInventory.Items.Add(TradeInventory[120]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[120]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (randomItem >= 70 && randomItem <= 80)
                 {
-                    Inventory[150] = "Вино на кастылях";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[150]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[150] = "Вино на кастылях";
+                    listBoxTradeInventory.Items.Add(TradeInventory[150]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[150]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (randomItem >= 60 && randomItem <= 70)
                 {
-                    Inventory[50] = "Чай \"ZAML\"";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[50]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[50] = "Чай \"ZAML\"";
+                    listBoxTradeInventory.Items.Add(TradeInventory[50]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[50]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (randomItem >= 50 && randomItem <= 60)
                 {
-                    Inventory[50] = "Кофе \"Мьютекс\"";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[50]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[50] = "Кофе \"Мьютекс\"";
+                    listBoxTradeInventory.Items.Add(TradeInventory[50]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[50]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (randomItem >= 40 && randomItem <= 50)
                 {
-                    Inventory[200] = "Медикаменты \"Подсостояние суперсостояния\"";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[200]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[200] = "Медикаменты \"Подсостояние суперсостояния\"";
+                    listBoxTradeInventory.Items.Add(TradeInventory[200]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[200]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 if (randomItem >= 30 && randomItem <= 40)
                 {
-                    Inventory[300] = "Статик Вилка";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[300]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[300] = "Статик Вилка";
+                    listBoxTradeInventory.Items.Add(TradeInventory[300]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[300]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (randomItem >= 0 && randomItem <= 30)
+                if (randomItem >= 20 && randomItem <= 30)
                 {
-                    Inventory[320] = "Лямбда мыло";
-                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {Inventory[320]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    TradeInventory[320] = "Лямбда мыло";
+                    listBoxTradeInventory.Items.Add(TradeInventory[320]);
+                    MessageBox.Show($"Вам повезло и вы смогли украсть товар: {TradeInventory[320]}", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                else if (randomItem >= 0 && randomItem <= 20) { MessageBox.Show($"Вам не повезло и вы ничего не нашли", "Воровская жизнь не лёгкая", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+
 
             }
             else
@@ -669,10 +768,11 @@ namespace WinFormsApp3
                 player.Agility -= 1;
                 player.Damage -= 1;
                 player.Intelligence -= 1;
-                if (Inventory.Count > 0)
+                if (TradeInventory.Count > 0)
                 {
                     MessageBox.Show("Все ваши вещи были конфискованы.", "Жадность фраера сгубила!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Inventory.Clear();
+                    TradeInventory.Clear();
+                    listBoxTradeInventory.Items.Clear();
                 }
                 IsDeath();
             }
@@ -684,6 +784,15 @@ namespace WinFormsApp3
                 MessageBox.Show("Одна из ваших характеристик опустилась до нуля. Вы погибли", "Смерть.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 Application.Exit();
             }
+        }
+        void Shmon()
+        {
+            int shmon = random.Next(1, 100);
+            if(shmon <= 100 && shmon >= 60)
+            {
+                MessageBox.Show("К вам в камеру резко зашла охрана и обшмонала вас", "\"АТАС ШМОН!\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listBoxTradeInventory.Items.Clear();
+            }                       
         }
         private void Button1_Click(object? sender, EventArgs e)
         {
@@ -697,6 +806,8 @@ namespace WinFormsApp3
         {
             pictureBoxLocation.Image = Properties.Resources.library;
             listBoxBooks.Visible = true;
+            listBoxTradeInventory.Visible = false;
+            buttonTrade.Visible = false;
             buttonBuy.Enabled = true;
             buttonBuy.Visible = true;
 
@@ -928,15 +1039,52 @@ namespace WinFormsApp3
         }
         private void buttonTrade_Click(object sender, EventArgs e)
         {
-            if (Inventory.Count != 0)
+
+            string selectedItem = listBoxTradeInventory.SelectedItem.ToString();
+            if (TradeInventory.Count != 0)
             {
                 double MoneyTrade = 0;
                 double Comissoin = 0;
-                foreach (var item in Inventory)
+
+                listBoxTradeInventory.Items.Remove(selectedItem);
+                switch (selectedItem)
                 {
-                    Inventory.Remove(item.Key);
-                    MoneyTrade += item.Key;
+                    case "Синтаксический сахар":
+                        MoneyTrade += 100;
+                        TradeInventory.Remove(100);
+                        break;
+                    case "Пачка сигарет \"Git\"":
+                        MoneyTrade += 120;
+                        TradeInventory.Remove(120);
+                        break;
+                    case "Вино на кастылях":
+                        MoneyTrade += 150;
+                        TradeInventory.Remove(150);
+                        break;
+                    case "Чай \"ZAML\"":
+                        MoneyTrade += 50;
+                        TradeInventory.Remove(50);
+                        break;
+                    case "Кофе \"Мьютекс\"":
+                        MoneyTrade += 50;
+                        TradeInventory.Remove(50);
+                        break;
+                    case "Медикаменты \"Подсостояние суперсостояния\"":
+                        MoneyTrade += 200;
+                        TradeInventory.Remove(200);
+                        break;
+                    case "Статик Вилка":
+                        MoneyTrade += 300;
+                        TradeInventory.Remove(300);
+                        break;
+                    case "Лямбда мыло":
+                        MoneyTrade += 320;
+                        TradeInventory.Remove(320);
+                        break;
+
                 }
+
+
                 if (player.RankName == "Сишарпист")
                 {
                     ComissionPercent = 30;
@@ -950,19 +1098,79 @@ namespace WinFormsApp3
                     MoneyTrade -= Comissoin;
                 }
 
-                MessageBox.Show($"Вы продали все товары");
-                MessageBox.Show($"Ваша выручка с продажи составила: {MoneyTrade} руб.", "Вы заработали", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Вы продали товар:{selectedItem}");
+                MessageBox.Show($"Ваша выручка с продажи составила: {MoneyTrade} руб.", "Барыга", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MoneyTrade += player.Money;
             }
             else
                 MessageBox.Show($"У вас нет товара на продажу", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
         }
         private void buttonGym_Click(object sender, EventArgs e)
         {
             listBoxBooks.Visible = false;
+            listBoxTradeInventory.Visible = false;
             buttonBuy.Visible = false;
-            
+            buttonTrade.Visible = false;
+
+
             pictureBoxLocation.Image = Properties.Resources.gym;
+        }
+        private void buttonStreet_Click(object sender, EventArgs e)
+        {
+            listBoxBooks.Visible = false;
+            listBoxTradeInventory.Visible = true;
+            buttonBuy.Visible = false;
+            buttonTrade.Visible = true;
+            pictureBoxLocation.Image = Properties.Resources.street;
+        }
+        private void buttonOpenBox_Click(object sender, EventArgs e)
+        {
+            if (IsOpened == false)
+            {
+                listBoxInventoryBox.Visible = true;
+                listBoxTradeInventory.Visible = true;
+                buttonPutItem.Visible = true;               
+                IsOpened = true;
+
+                if (listBoxInventoryBox.Items.Count == 0 && listBoxTradeInventory.Items.Count == 0)
+                {
+                    buttonPutItem.Enabled = false;
+                }
+                else
+                    buttonPutItem.Enabled = true;
+            }
+            else
+            {
+                IsOpened = false;
+                listBoxInventoryBox.Visible = false;
+                listBoxTradeInventory.Visible = false;
+                buttonPutItem.Visible = false;
+
+                if (listBoxInventoryBox.Items.Count == 0 && listBoxTradeInventory.Items.Count == 0)
+                {
+                    buttonPutItem.Enabled = false;
+                }
+                else
+                    buttonPutItem.Enabled = true;
+            }
+            
+        }
+        private void buttonPutItem_Click(object sender, EventArgs e)
+        {
+
+            if (listBoxTradeInventory.SelectedItem != null)
+            {
+                listBoxInventoryBox.Items.Add(listBoxTradeInventory.SelectedItem);
+                listBoxTradeInventory.Items.Remove(listBoxTradeInventory.SelectedItem);                                
+            }
+            else if (listBoxInventoryBox.SelectedItem != null)
+            {
+                listBoxTradeInventory.Items.Add(listBoxInventoryBox.SelectedItem);
+                listBoxInventoryBox.Items.Remove(listBoxInventoryBox.SelectedItem);             
+            }
+            else
+                MessageBox.Show($"Выберите предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
