@@ -62,10 +62,15 @@ namespace WinFormsApp3
         public Form1()
         {
             InitializeComponent();
-            WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\Mikhail_Krug_-_raer_48113874.mp3";
+            WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\WinFormsApp3\Resources\Mikhail_Krug.wav";
             WMP.settings.volume = 10;
             WMP.controls.play();
-           
+
+
+
+
+
+
 
             Test();
             TimeTableLabel.Text = TimeTables[0];
@@ -131,6 +136,7 @@ namespace WinFormsApp3
                     buttonLibrary.Visible = false;
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -456,6 +462,7 @@ namespace WinFormsApp3
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     IsDeath();
                     break;
+
             }
         }
         void Test()

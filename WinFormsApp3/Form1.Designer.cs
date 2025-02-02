@@ -60,7 +60,7 @@
             pictureBoxLocation.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLocation.TabIndex = 0;
             pictureBoxLocation.TabStop = false;
-            toolTip1.SetToolTip(pictureBoxLocation, "Всейчас находитесь здесь");
+            toolTip1.SetToolTip(pictureBoxLocation, "Вы сейчас находитесь здесь");
             // 
             // TimeTableLabel
             // 
@@ -72,6 +72,7 @@
             TimeTableLabel.Size = new Size(12, 15);
             TimeTableLabel.TabIndex = 2;
             TimeTableLabel.Text = "-";
+            toolTip1.SetToolTip(TimeTableLabel, "Текущее время");
             // 
             // button1
             // 
