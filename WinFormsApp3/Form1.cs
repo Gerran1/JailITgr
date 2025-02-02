@@ -22,9 +22,9 @@ namespace WinFormsApp3
         static Classes.IPrisoner csharpAdapter = new Classes.CSharpAdapter(cSharp);
         static Classes.IPrisoner cppAdapter = new Classes.CppAdapter(cpp);
         static Classes.IPrisoner assemblyAdapter = new Classes.AssemblyAdapter(assembly);
-        WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
+        public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
         Classes.Player player;
-
+        
         Questes questes = new Questes();
 
         static int Money = 0;
@@ -62,6 +62,11 @@ namespace WinFormsApp3
         public Form1()
         {
             InitializeComponent();
+            WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\Mikhail_Krug_-_raer_48113874.mp3";
+            WMP.settings.volume = 10;
+            WMP.controls.play();
+           
+
             Test();
             TimeTableLabel.Text = TimeTables[0];
             buttonLibrary.Enabled = false;
@@ -100,8 +105,7 @@ namespace WinFormsApp3
                 listBoxBooks.Items.Add(item);
             }
 
-            WMP.URL = @"Mikhail_Krug_-_raer_48113874.mp3";
-            WMP.controls.play();
+           
         }
 
         private async void button1_Click(object sender, EventArgs e)
