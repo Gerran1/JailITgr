@@ -113,6 +113,16 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grey_stena {
+            get {
+                object obj = ResourceManager.GetObject("grey_stena", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gym {
             get {
                 object obj = ResourceManager.GetObject("gym", resourceCulture);
@@ -196,6 +206,16 @@ namespace WinFormsApp3.Properties {
         internal static System.Drawing.Bitmap work {
             get {
                 object obj = ResourceManager.GetObject("work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ychik {
+            get {
+                object obj = ResourceManager.GetObject("ychik", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
