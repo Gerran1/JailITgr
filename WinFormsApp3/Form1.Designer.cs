@@ -56,6 +56,7 @@
             // pictureBoxLocation
             // 
             pictureBoxLocation.BackColor = Color.AntiqueWhite;
+            pictureBoxLocation.Location = new Point(211, -1);
             pictureBoxLocation.Location = new Point(176, -1);
             pictureBoxLocation.Name = "pictureBoxLocation";
             pictureBoxLocation.Size = new Size(624, 452);
@@ -99,7 +100,7 @@
             label1.ForeColor = Color.LavenderBlush;
             label1.Location = new Point(9, 9);
             label1.Name = "label1";
-            label1.Size = new Size(86, 15);
+            label1.Size = new Size(101, 19);
             label1.TabIndex = 4;
             label1.Text = "Расписание: ";
             // 
@@ -328,7 +329,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(800, 448);
+            BackgroundImage = Properties.Resources.grey_stena;
+            ClientSize = new Size(800, 450);
             Controls.Add(buttonBuyShop);
             Controls.Add(listBoxShopInventory);
             Controls.Add(buttonShop);

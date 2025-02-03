@@ -67,6 +67,7 @@ namespace WinFormsApp3
         public Form1()
         {
             InitializeComponent();
+            pictureBoxLocation.Image = Properties.Resources.prison_cell;
             WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\WinFormsApp3\Resources\Mikhail_Krug.wav";
             WMP.settings.volume = 10;
             WMP.settings.playCount = 9999;
@@ -1215,6 +1216,7 @@ namespace WinFormsApp3
         {
             if (IsOpened == false)
             {
+                pictureBoxLocation.Image = Properties.Resources.ychik;
                 listBoxInventoryBox.Visible = true;
                 listBoxTradeInventory.Visible = true;
                 buttonPutItem.Visible = true;
@@ -1229,6 +1231,7 @@ namespace WinFormsApp3
             }
             else
             {
+                pictureBoxLocation.Image = Properties.Resources.prison_cell;
                 IsOpened = false;
                 listBoxInventoryBox.Visible = false;
                 listBoxTradeInventory.Visible = false;
