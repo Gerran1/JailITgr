@@ -24,7 +24,7 @@ namespace WinFormsApp3
         static Classes.IPrisoner assemblyAdapter = new Classes.AssemblyAdapter(assembly);
         public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
         Classes.Player player;
-        
+
         Questes questes = new Questes();
 
         static int Money = 0;
@@ -35,8 +35,11 @@ namespace WinFormsApp3
         int ComissionPercent = 0;
         bool IsArested = false;
         bool IsOpened = false;
+        bool IsShopbtnOpened = false;
 
         List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
+
+        List<string> ShopInventory = new List<string>() { "Синтаксический сахар", "Пачка сигарет \"Git\"", "Чай \"ZAML\"", "Паблик Шило", "Массив мелков" };
 
         Dictionary<int, string> Books = new Dictionary<int, string>()
         {
@@ -59,14 +62,16 @@ namespace WinFormsApp3
 
         List<string> BoxInventory = new List<string>() { };
 
+
+
         public Form1()
         {
             InitializeComponent();
             WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\WinFormsApp3\Resources\Mikhail_Krug.wav";
-            WMP.settings.volume = 10;                 
-            WMP.settings.playCount = 9999;           
+            WMP.settings.volume = 10;
+            WMP.settings.playCount = 9999;
             WMP.controls.play();
-            
+
 
             Test();
             TimeTableLabel.Text = TimeTables[0];
@@ -82,6 +87,8 @@ namespace WinFormsApp3
             listBoxTradeInventory.Visible = false;
             listBoxInventoryBox.Enabled = true;
             listBoxInventoryBox.Visible = false;
+            listBoxShopInventory.Enabled = true;
+            listBoxShopInventory.Visible = false;
 
             buttonBuy.Enabled = false;
             buttonBuy.Visible = false;
@@ -100,13 +107,27 @@ namespace WinFormsApp3
 
             buttonPutItem.Visible = false;
             buttonPutItem.Enabled = false;
+
+            buttonShop.Visible = false;
+            buttonShop.Enabled = false;
+
+            buttonBuyShop.Visible = false;
+            buttonBuyShop.Enabled = false;
+
             foreach (var book in Books)
             {
                 string item = $"{book.Value}" + $" за {book.Key} руб.";
                 listBoxBooks.Items.Add(item);
             }
 
-           
+
+
+            foreach (var item in ShopInventory)
+            {
+                listBoxShopInventory.Items.Add(item);
+            }
+
+
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -126,13 +147,16 @@ namespace WinFormsApp3
             {
                 case 0:
                     //подъём
+                    listBoxBooks.Visible = false;
+                    listBoxTradeInventory.Visible = false;
+                    listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
+
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
                     buttonLibrary.Enabled = false;
                     buttonLibrary.Visible = false;
-                    listBoxBooks.Visible = false;
-                    listBoxTradeInventory.Visible = false;
-                    listBoxInventoryBox.Visible = false;
+
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -143,6 +167,10 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
                     buttonOpenBox.Enabled = true;
                     buttonOpenBox.Visible = true;
@@ -166,7 +194,7 @@ namespace WinFormsApp3
                         MessageBox.Show($"Вы заработали с комиссии на продаже 100 рублей", "Пассивный заработок", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         player.Money += 100;
                     }
-                   
+
                     SneakAttackChance = random2.Next(1, 100);
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     Days += 1;
@@ -210,6 +238,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -222,6 +251,10 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
@@ -238,6 +271,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -248,6 +282,10 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
                     buttonOpenBox.Enabled = true;
                     buttonOpenBox.Visible = true;
@@ -281,6 +319,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -293,6 +332,11 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
+
+                    buttonShop.Visible = true;
+                    buttonShop.Enabled = true;
 
 
                     pictureBoxLocation.Image = Properties.Resources.work;
@@ -321,6 +365,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -333,6 +378,10 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
@@ -348,6 +397,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxBooks.Enabled = true;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
 
                     if (player.RankName == "Сишарпист" || player.RankName == "Плюсист")
                     {
@@ -366,6 +416,11 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
+
                     IsDeath();
                     break;
                 case 6:
@@ -379,6 +434,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
@@ -389,6 +445,10 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
@@ -405,6 +465,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
@@ -413,6 +474,10 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
 
                     pictureBoxLocation.Image = Properties.Resources.shower;
@@ -443,6 +508,7 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
+                    listBoxShopInventory.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
@@ -451,6 +517,10 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
+                    buttonShop.Visible = false;
+                    buttonShop.Enabled = false;
+                    buttonBuyShop.Visible = false;
+                    buttonBuyShop.Enabled = false;
 
                     buttonOpenBox.Enabled = true;
                     buttonOpenBox.Visible = true;
@@ -805,11 +875,11 @@ namespace WinFormsApp3
         void Shmon()
         {
             int shmon = random.Next(1, 100);
-            if(shmon <= 100 && shmon >= 60)
+            if (shmon <= 100 && shmon >= 60)
             {
                 MessageBox.Show("К вам в камеру резко зашла охрана и обшмонала вас", "\"АТАС ШМОН!\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 listBoxTradeInventory.Items.Clear();
-            }                       
+            }
         }
         private void Button1_Click(object? sender, EventArgs e)
         {
@@ -1120,8 +1190,8 @@ namespace WinFormsApp3
                 MoneyTrade += player.Money;
             }
             else
-                MessageBox.Show($"У вас нет товара на продажу", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                MessageBox.Show($"У вас нет товара на продажу или вы хотите продать уже купленный предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
         private void buttonGym_Click(object sender, EventArgs e)
         {
@@ -1147,7 +1217,7 @@ namespace WinFormsApp3
             {
                 listBoxInventoryBox.Visible = true;
                 listBoxTradeInventory.Visible = true;
-                buttonPutItem.Visible = true;               
+                buttonPutItem.Visible = true;
                 IsOpened = true;
 
                 if (listBoxInventoryBox.Items.Count == 0 && listBoxTradeInventory.Items.Count == 0)
@@ -1171,7 +1241,7 @@ namespace WinFormsApp3
                 else
                     buttonPutItem.Enabled = true;
             }
-            
+
         }
         private void buttonPutItem_Click(object sender, EventArgs e)
         {
@@ -1179,12 +1249,109 @@ namespace WinFormsApp3
             if (listBoxTradeInventory.SelectedItem != null)
             {
                 listBoxInventoryBox.Items.Add(listBoxTradeInventory.SelectedItem);
-                listBoxTradeInventory.Items.Remove(listBoxTradeInventory.SelectedItem);                                
+                listBoxTradeInventory.Items.Remove(listBoxTradeInventory.SelectedItem);
             }
             else if (listBoxInventoryBox.SelectedItem != null)
             {
                 listBoxTradeInventory.Items.Add(listBoxInventoryBox.SelectedItem);
-                listBoxInventoryBox.Items.Remove(listBoxInventoryBox.SelectedItem);             
+                listBoxInventoryBox.Items.Remove(listBoxInventoryBox.SelectedItem);
+            }
+            else
+                MessageBox.Show($"Выберите предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void buttonShop_Click(object sender, EventArgs e)
+        {
+            if (IsShopbtnOpened == false)
+            {
+                listBoxShopInventory.Visible = true;
+                buttonBuyShop.Visible = true;
+                buttonBuyShop.Enabled = true;
+                IsShopbtnOpened = true;
+            }
+            else
+            {
+                IsShopbtnOpened = false;
+                buttonBuyShop.Visible = false;
+                buttonBuyShop.Enabled = false;
+                listBoxShopInventory.Visible = false;
+            }
+
+        }
+
+        private void buttonBuyShop_Click(object sender, EventArgs e)
+        {
+            if (listBoxShopInventory.SelectedItems != null)
+            {
+                
+                switch (listBoxShopInventory.SelectedItem)
+                {
+                    case "Синтаксический сахар":
+                        if (player.Money < 100)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
+                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
+                            player.Money -= 100;
+                            MessageBox.Show($"Денег на данный момент {player.Money}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                    case "Пачка сигарет \"Git\"":
+                        if (player.Money < 120)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
+                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
+                            player.Money -= 120;
+                        MessageBox.Show($"Денег на данный момент {player.Money}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case "Чай \"ZAML\"":
+                        if (player.Money < 50)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
+                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
+                            player.Money -= 120;
+                    break;
+                    case "Паблик Шило":
+                        if (player.Money < 300)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
+                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
+                            player.Money -= 300;
+                    break;
+                    case "Массив мелков":
+                        if (player.Money < 170)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
+                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
+                            player.Money -= 170;
+                    break;
+                }
             }
             else
                 MessageBox.Show($"Выберите предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
