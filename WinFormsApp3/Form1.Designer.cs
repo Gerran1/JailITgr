@@ -56,7 +56,6 @@
             // pictureBoxLocation
             // 
             pictureBoxLocation.BackColor = Color.AntiqueWhite;
-            pictureBoxLocation.Location = new Point(211, -1);
             pictureBoxLocation.Location = new Point(176, -1);
             pictureBoxLocation.Name = "pictureBoxLocation";
             pictureBoxLocation.Size = new Size(624, 452);
@@ -68,6 +67,7 @@
             // TimeTableLabel
             // 
             TimeTableLabel.AutoSize = true;
+            TimeTableLabel.BackColor = Color.Transparent;
             TimeTableLabel.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             TimeTableLabel.ForeColor = Color.LavenderBlush;
             TimeTableLabel.Location = new Point(9, 30);
@@ -79,7 +79,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.SlateGray;
+            button1.BackColor = Color.DimGray;
             button1.Cursor = Cursors.Hand;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Ink Free", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
@@ -95,12 +95,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.LightSlateGray;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.LavenderBlush;
             label1.Location = new Point(9, 9);
             label1.Name = "label1";
-            label1.Size = new Size(101, 19);
+            label1.Size = new Size(84, 15);
             label1.TabIndex = 4;
             label1.Text = "Расписание: ";
             // 
@@ -119,7 +119,7 @@
             // 
             // buttonLibrary
             // 
-            buttonLibrary.BackColor = Color.SlateGray;
+            buttonLibrary.BackColor = Color.DimGray;
             buttonLibrary.Cursor = Cursors.Hand;
             buttonLibrary.FlatStyle = FlatStyle.Popup;
             buttonLibrary.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
@@ -135,7 +135,7 @@
             // 
             // buttonTheif
             // 
-            buttonTheif.BackColor = Color.SlateGray;
+            buttonTheif.BackColor = Color.DimGray;
             buttonTheif.Cursor = Cursors.Hand;
             buttonTheif.FlatStyle = FlatStyle.Popup;
             buttonTheif.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
@@ -157,20 +157,20 @@
             listBoxBooks.ItemHeight = 15;
             listBoxBooks.Location = new Point(176, -1);
             listBoxBooks.Name = "listBoxBooks";
-            listBoxBooks.Size = new Size(624, 109);
+            listBoxBooks.Size = new Size(624, 124);
             listBoxBooks.TabIndex = 8;
             toolTip1.SetToolTip(listBoxBooks, "Книги");
             // 
             // buttonBuy
             // 
-            buttonBuy.BackColor = Color.SlateGray;
+            buttonBuy.BackColor = Color.DimGray;
             buttonBuy.Cursor = Cursors.Hand;
             buttonBuy.FlatStyle = FlatStyle.Popup;
             buttonBuy.Font = new Font("Ink Free", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             buttonBuy.ForeColor = Color.LavenderBlush;
-            buttonBuy.Location = new Point(176, 121);
+            buttonBuy.Location = new Point(176, 119);
             buttonBuy.Name = "buttonBuy";
-            buttonBuy.Size = new Size(75, 31);
+            buttonBuy.Size = new Size(75, 30);
             buttonBuy.TabIndex = 9;
             buttonBuy.Text = "Купить";
             buttonBuy.UseVisualStyleBackColor = false;
@@ -178,12 +178,12 @@
             // 
             // buttonTrade
             // 
-            buttonTrade.BackColor = Color.SlateGray;
+            buttonTrade.BackColor = Color.DimGray;
             buttonTrade.Cursor = Cursors.Hand;
             buttonTrade.FlatStyle = FlatStyle.Popup;
             buttonTrade.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             buttonTrade.ForeColor = Color.LavenderBlush;
-            buttonTrade.Location = new Point(177, 105);
+            buttonTrade.Location = new Point(177, 114);
             buttonTrade.Name = "buttonTrade";
             buttonTrade.Size = new Size(74, 26);
             buttonTrade.TabIndex = 10;
@@ -193,7 +193,7 @@
             // 
             // buttonGym
             // 
-            buttonGym.BackColor = Color.SlateGray;
+            buttonGym.BackColor = Color.DimGray;
             buttonGym.Cursor = Cursors.Hand;
             buttonGym.FlatStyle = FlatStyle.Popup;
             buttonGym.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
@@ -208,7 +208,7 @@
             // 
             // listBoxTradeInventory
             // 
-            listBoxTradeInventory.BackColor = Color.SlateGray;
+            listBoxTradeInventory.BackColor = Color.DimGray;
             listBoxTradeInventory.Cursor = Cursors.Hand;
             listBoxTradeInventory.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             listBoxTradeInventory.ForeColor = Color.LavenderBlush;
@@ -216,13 +216,13 @@
             listBoxTradeInventory.ItemHeight = 15;
             listBoxTradeInventory.Location = new Point(176, -1);
             listBoxTradeInventory.Name = "listBoxTradeInventory";
-            listBoxTradeInventory.Size = new Size(312, 94);
+            listBoxTradeInventory.Size = new Size(312, 109);
             listBoxTradeInventory.TabIndex = 13;
             toolTip1.SetToolTip(listBoxTradeInventory, "Ваш инвентарь предметов на продажу");
             // 
             // buttonStreet
             // 
-            buttonStreet.BackColor = Color.SlateGray;
+            buttonStreet.BackColor = Color.DimGray;
             buttonStreet.Cursor = Cursors.Hand;
             buttonStreet.FlatStyle = FlatStyle.Popup;
             buttonStreet.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
@@ -237,7 +237,7 @@
             // 
             // listBoxInventoryBox
             // 
-            listBoxInventoryBox.BackColor = Color.SlateGray;
+            listBoxInventoryBox.BackColor = Color.DimGray;
             listBoxInventoryBox.Cursor = Cursors.Hand;
             listBoxInventoryBox.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             listBoxInventoryBox.ForeColor = Color.LavenderBlush;
@@ -245,28 +245,28 @@
             listBoxInventoryBox.ItemHeight = 15;
             listBoxInventoryBox.Location = new Point(494, -1);
             listBoxInventoryBox.Name = "listBoxInventoryBox";
-            listBoxInventoryBox.Size = new Size(306, 94);
+            listBoxInventoryBox.Size = new Size(306, 109);
             listBoxInventoryBox.TabIndex = 16;
             toolTip1.SetToolTip(listBoxInventoryBox, "Ящик");
             // 
             // listBoxShopInventory
             // 
-            listBoxShopInventory.BackColor = Color.SlateGray;
+            listBoxShopInventory.BackColor = Color.DimGray;
             listBoxShopInventory.Cursor = Cursors.Hand;
             listBoxShopInventory.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             listBoxShopInventory.ForeColor = Color.LavenderBlush;
             listBoxShopInventory.FormattingEnabled = true;
             listBoxShopInventory.ItemHeight = 15;
-            listBoxShopInventory.Location = new Point(154, 256);
+            listBoxShopInventory.Location = new Point(176, 342);
             listBoxShopInventory.Margin = new Padding(3, 2, 3, 2);
             listBoxShopInventory.Name = "listBoxShopInventory";
-            listBoxShopInventory.Size = new Size(274, 64);
+            listBoxShopInventory.Size = new Size(274, 109);
             listBoxShopInventory.TabIndex = 19;
             toolTip1.SetToolTip(listBoxShopInventory, "Ваш инвентарь предметов на продажу");
             // 
             // buttonOpenBox
             // 
-            buttonOpenBox.BackColor = Color.SlateGray;
+            buttonOpenBox.BackColor = Color.DimGray;
             buttonOpenBox.FlatStyle = FlatStyle.Popup;
             buttonOpenBox.Font = new Font("Ink Free", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             buttonOpenBox.ForeColor = Color.LavenderBlush;
@@ -280,12 +280,12 @@
             // 
             // buttonPutItem
             // 
-            buttonPutItem.BackColor = Color.SlateGray;
+            buttonPutItem.BackColor = Color.DimGray;
             buttonPutItem.Cursor = Cursors.Hand;
             buttonPutItem.FlatStyle = FlatStyle.Popup;
             buttonPutItem.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             buttonPutItem.ForeColor = Color.LavenderBlush;
-            buttonPutItem.Location = new Point(445, 105);
+            buttonPutItem.Location = new Point(445, 114);
             buttonPutItem.Name = "buttonPutItem";
             buttonPutItem.Size = new Size(90, 26);
             buttonPutItem.TabIndex = 17;
@@ -295,14 +295,14 @@
             // 
             // buttonShop
             // 
-            buttonShop.BackColor = Color.SlateGray;
+            buttonShop.BackColor = Color.DimGray;
             buttonShop.FlatStyle = FlatStyle.Popup;
             buttonShop.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             buttonShop.ForeColor = Color.LavenderBlush;
-            buttonShop.Location = new Point(84, 148);
+            buttonShop.Location = new Point(96, 196);
             buttonShop.Margin = new Padding(3, 2, 3, 2);
             buttonShop.Name = "buttonShop";
-            buttonShop.Size = new Size(65, 17);
+            buttonShop.Size = new Size(65, 24);
             buttonShop.TabIndex = 18;
             buttonShop.Text = "Барыга";
             buttonShop.UseVisualStyleBackColor = false;
@@ -310,15 +310,15 @@
             // 
             // buttonBuyShop
             // 
-            buttonBuyShop.BackColor = Color.SlateGray;
+            buttonBuyShop.BackColor = Color.DimGray;
             buttonBuyShop.Cursor = Cursors.Hand;
             buttonBuyShop.FlatStyle = FlatStyle.Popup;
             buttonBuyShop.Font = new Font("Ink Free", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
             buttonBuyShop.ForeColor = Color.LavenderBlush;
-            buttonBuyShop.Location = new Point(154, 236);
+            buttonBuyShop.Location = new Point(177, 308);
             buttonBuyShop.Margin = new Padding(3, 2, 3, 2);
             buttonBuyShop.Name = "buttonBuyShop";
-            buttonBuyShop.Size = new Size(66, 23);
+            buttonBuyShop.Size = new Size(74, 30);
             buttonBuyShop.TabIndex = 20;
             buttonBuyShop.Text = "Купить";
             buttonBuyShop.UseVisualStyleBackColor = false;
