@@ -152,6 +152,8 @@ namespace WinFormsApp3
 
                     if (player.RankName == "Ассемблер")
                     {
+                        MessageBox.Show($"Вы заработали с комиссии на продаже 200 рублей", "Пассивный заработок", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        player.Money += 200;
                         DialogResult dr = MessageBox.Show("Вы желаете стать вором в законе?(конец игры)", "\"Конец?\"", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                         if (dr == DialogResult.Yes)
                         {
@@ -159,6 +161,12 @@ namespace WinFormsApp3
                             Application.Exit();
                         }
                     }
+                    else if (player.RankName == "Плюсист")
+                    {
+                        MessageBox.Show($"Вы заработали с комиссии на продаже 100 рублей", "Пассивный заработок", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        player.Money += 100;
+                    }
+                   
                     SneakAttackChance = random2.Next(1, 100);
                     pictureBoxLocation.Image = Properties.Resources.prison_cell;
                     Days += 1;
