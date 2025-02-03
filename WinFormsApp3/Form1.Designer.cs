@@ -112,7 +112,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
-            toolTip1.SetToolTip(pictureBox2, "Это вы:)");
+            toolTip1.SetToolTip(pictureBox2, "Это вы");
             // 
             // buttonLibrary
             // 

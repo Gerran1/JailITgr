@@ -57,20 +57,16 @@ namespace WinFormsApp3
 
         Dictionary<int, string> TradeInventory = new Dictionary<int, string>() { };
 
-        List<string> BoxInventory = new List<string>(3) { };
+        List<string> BoxInventory = new List<string>() { };
 
         public Form1()
         {
             InitializeComponent();
             WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\WinFormsApp3\Resources\Mikhail_Krug.wav";
-            WMP.settings.volume = 10;
+            WMP.settings.volume = 10;                 
+            WMP.settings.playCount = 9999;           
             WMP.controls.play();
-
-
-
-
-
-
+            
 
             Test();
             TimeTableLabel.Text = TimeTables[0];
