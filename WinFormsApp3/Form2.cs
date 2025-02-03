@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,35 @@ namespace WinFormsApp3
 {
     public partial class Form2 : Form
     {
-        public Form2()
+       
+        public List<string> Qusts;
+        public int i = 0;
+        public Form2(List<string> list1)
         {
+
             InitializeComponent();
-            label1.Text = "";
+            
+            Qusts = list1;
+            label1.Text = Qusts[i];
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        public string GetQuest(int index)
         {
+            if (index >= 0 && index < Qusts.Count)
+            {
+                return Qusts[index];
+            }
+            return null;
+        }
+
+        public void button1_Click(object sender, EventArgs e)
+        {
+            i++;
+            label1.Text = GetQuest(i);
+            if (GetQuest(i) == null)
+            {
+                this.Close();
+            }
             
         }
     }
