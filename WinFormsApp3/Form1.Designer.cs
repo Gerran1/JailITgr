@@ -56,7 +56,6 @@
             // pictureBoxLocation
             // 
             pictureBoxLocation.BackColor = Color.AntiqueWhite;
-            pictureBoxLocation.Image = Properties.Resources.prison_cell;
             pictureBoxLocation.Location = new Point(201, -1);
             pictureBoxLocation.Margin = new Padding(3, 4, 3, 4);
             pictureBoxLocation.Name = "pictureBoxLocation";
@@ -268,10 +267,10 @@
             listBoxShopInventory.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
             listBoxShopInventory.ForeColor = Color.LavenderBlush;
             listBoxShopInventory.FormattingEnabled = true;
-            listBoxShopInventory.ItemHeight = 15;
+            listBoxShopInventory.ItemHeight = 19;
             listBoxShopInventory.Location = new Point(176, 342);
             listBoxShopInventory.Name = "listBoxShopInventory";
-            listBoxShopInventory.Size = new Size(312, 109);
+            listBoxShopInventory.Size = new Size(312, 99);
             listBoxShopInventory.TabIndex = 19;
             toolTip1.SetToolTip(listBoxShopInventory, "Ваш инвентарь предметов на продажу");
             // 
@@ -340,6 +339,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
+            BackgroundImage = Properties.Resources.grey_stena;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonBuyShop);
             Controls.Add(listBoxShopInventory);
