@@ -13,14 +13,13 @@ namespace WinFormsApp3
 {
     public partial class Form2 : Form
     {
-       
+
         public List<string> Qusts;
         public int i = 0;
         public Form2(List<string> list1)
         {
 
-            InitializeComponent();
-            
+            InitializeComponent();          
             Qusts = list1;
             label1.Text = Qusts[i];
         }
@@ -42,7 +41,12 @@ namespace WinFormsApp3
             {
                 this.Close();
             }
-            
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

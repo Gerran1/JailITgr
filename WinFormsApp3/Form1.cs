@@ -37,9 +37,7 @@ namespace WinFormsApp3
         bool IsOpened = false;
         bool IsShopbtnOpened = false;
 
-        List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };
-
-        List<string> ShopInventory = new List<string>() { "Синтаксический сахар", "Пачка сигарет \"Git\"", "Чай \"ZAML\"", "Паблик Шило", "Массив мелков" };
+        List<string> TimeTables = new List<string>() { "Подъём", "Завтрак", "Перекличка", "Работа", "Обед", "Cвободное Время", "Ужин", "Подготовка ко сну", "Сон" };      
 
         Dictionary<int, string> Books = new Dictionary<int, string>()
         {
@@ -68,7 +66,7 @@ namespace WinFormsApp3
         {
             InitializeComponent();
             pictureBoxLocation.Image = Properties.Resources.prison_cell;
-            WMP.URL = @"C:\Users\rusla\source\repos\JailITgr\WinFormsApp3\Resources\Mikhail_Krug.wav";
+            WMP.URL = @"C:\Users\мк\Source\Repos\JailITgr5.02\WinFormsApp3\Resources\Mikhail_Krug.wav";
             WMP.settings.volume = 10;
             WMP.settings.playCount = 9999;
             WMP.controls.play();
@@ -88,8 +86,7 @@ namespace WinFormsApp3
             listBoxTradeInventory.Visible = false;
             listBoxInventoryBox.Enabled = true;
             listBoxInventoryBox.Visible = false;
-            listBoxShopInventory.Enabled = true;
-            listBoxShopInventory.Visible = false;
+
 
             buttonBuy.Enabled = false;
             buttonBuy.Visible = false;
@@ -109,26 +106,12 @@ namespace WinFormsApp3
             buttonPutItem.Visible = false;
             buttonPutItem.Enabled = false;
 
-            buttonShop.Visible = false;
-            buttonShop.Enabled = false;
-
-            buttonBuyShop.Visible = false;
-            buttonBuyShop.Enabled = false;
-
+            
             foreach (var book in Books)
             {
                 string item = $"{book.Value}" + $" за {book.Key} руб.";
                 listBoxBooks.Items.Add(item);
             }
-
-
-
-            foreach (var item in ShopInventory)
-            {
-                listBoxShopInventory.Items.Add(item);
-            }
-
-
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -151,7 +134,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
 
                     buttonTheif.Enabled = false;
                     buttonTheif.Visible = false;
@@ -168,10 +150,6 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
                     buttonOpenBox.Enabled = true;
                     buttonOpenBox.Visible = true;
@@ -239,7 +217,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -252,10 +229,6 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
@@ -272,7 +245,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -283,10 +255,6 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
                     buttonOpenBox.Enabled = true;
                     buttonOpenBox.Visible = true;
@@ -320,7 +288,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -333,11 +300,8 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
-                    buttonShop.Visible = true;
-                    buttonShop.Enabled = true;
+
 
 
                     pictureBoxLocation.Image = Properties.Resources.work;
@@ -366,7 +330,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonBuy.Enabled = false;
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
@@ -379,10 +342,6 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
@@ -398,7 +357,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxBooks.Enabled = true;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
 
                     if (player.RankName == "Сишарпист" || player.RankName == "Плюсист")
                     {
@@ -417,10 +375,6 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
                     IsDeath();
                     break;
@@ -435,7 +389,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
@@ -446,10 +399,6 @@ namespace WinFormsApp3
                     buttonOpenBox.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
                     pictureBoxLocation.Image = Properties.Resources.dining_room;
                     //AsyncRegeniration();
@@ -466,7 +415,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
@@ -475,10 +423,6 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
 
                     pictureBoxLocation.Image = Properties.Resources.shower;
@@ -509,7 +453,6 @@ namespace WinFormsApp3
                     listBoxBooks.Visible = false;
                     listBoxTradeInventory.Visible = false;
                     listBoxInventoryBox.Visible = false;
-                    listBoxShopInventory.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
                     buttonGym.Enabled = false;
@@ -518,10 +461,6 @@ namespace WinFormsApp3
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
                     buttonPutItem.Enabled = false;
-                    buttonShop.Visible = false;
-                    buttonShop.Enabled = false;
-                    buttonBuyShop.Visible = false;
-                    buttonBuyShop.Enabled = false;
 
                     buttonOpenBox.Enabled = true;
                     buttonOpenBox.Visible = true;
@@ -903,296 +842,315 @@ namespace WinFormsApp3
         }
         private void buttonBuy_Click(object sender, EventArgs e)
         {
-
-            string selectedbook = listBoxBooks.SelectedItem.ToString();
-
-            if (selectedbook == null)
+            try
             {
-                MessageBox.Show("Выберите товар для покупки", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string selectedbook = listBoxBooks.SelectedItem.ToString();
+
+                if (selectedbook == null)
+                {
+                    MessageBox.Show("Выберите товар для покупки", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                //listBoxBooks.SelectedItems.Remove($"{selectedbook}");
+
+                switch (selectedbook)
+                {
+                    case "Питон Том I за 550 руб.":
+
+                        if (player.Money < 550)
+                        {
+                            MessageBox.Show("У вас недостаточно денег");
+                            break;
+                        }
+                        else if (player.RankName == "Питонист" || player.RankName == "Луанист")
+                        {
+                            MessageBox.Show("У вас уже есть знания из этой книги");
+                            break;
+                        }
+                        else
+                            player.Money -= 550;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Питон Том II за 700 руб.":
+
+                        if (player.Money < 700)
+                        {
+                            MessageBox.Show("У вас недостаточно денег");
+                            break;
+                        }
+                        else if (player.RankName == "Питонист" || player.RankName == "Луанист")
+                        {
+                            MessageBox.Show("У вас уже есть знания из этой книги");
+                            break;
+                        }
+                        else
+                            player.Money -= 700;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Луа: Исповедь Roblox за 890 руб.":
+
+                        if (player.Money < 890)
+                        {
+                            MessageBox.Show("У вас недостаточно денег");
+                            break;
+                        }
+                        else if (player.RankName == "Луанист")
+                        {
+                            MessageBox.Show("У вас уже есть знания из этой книги");
+                            break;
+                        }
+                        else
+                            player.Money -= 890;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Основы OOП за 1000 руб.":
+
+                        if (player.Money < 1000)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 1000;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "С#: Экспресс-курс за 1250 руб.":
+
+                        if (player.Money < 1250)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 1250;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Базы данных для детей за 1400 руб.":
+
+                        if (player.Money < 1400)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 1400;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "С++: Основы за 1600 руб.":
+
+                        if (player.Money < 1600)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 1600;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "С++: Работа с памятью за 1800 руб.":
+
+                        if (player.Money < 1800)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 1800;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money}   руб.");
+
+                        break;
+                    case "С++: Указатели за 2000 руб.":
+
+                        if (player.Money < 2000)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 2000;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money}   руб.");
+
+                        break;
+                    case "С++: Работа с памятью II за 2200 руб.":
+                        if (player.Money < 2200)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 2200;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Исскусство программирование на Assembler Том I за 2800 руб.":
+                        if (player.Money < 2800)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 2800;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Исскусство программирование на Assembler Том II за 3500 руб.":
+
+                        if (player.Money < 3500)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 3500;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                    case "Исскусство программирование на Assembler Том III за 4000 руб.":
+
+                        if (player.Money < 4000)
+                        {
+                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
+                        else
+                            player.Money -= 4000;
+                        MessageBox.Show($"Вы приобрели книгу {selectedbook}");
+                        RankPoints += 1;
+                        listBoxBooks.Items.Remove(selectedbook);
+                        MessageBox.Show($"Денег: {player.Money} руб.");
+
+                        break;
+                }
             }
-
-            //listBoxBooks.SelectedItems.Remove($"{selectedbook}");
-
-            switch (selectedbook)
+            catch(NullReferenceException ex)
             {
-                case "Питон Том I за 550 руб.":
-
-                    if (player.Money < 550)
-                    {
-                        MessageBox.Show("У вас недостаточно денег");
-                        break;
-                    }
-                    else if (player.RankName == "Питонист" || player.RankName == "Луанист")
-                    {
-                        MessageBox.Show("У вас уже есть знания из этой книги");
-                        break;
-                    }
-                    else
-                        player.Money -= 550;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Питон Том II за 700 руб.":
-
-                    if (player.Money < 700)
-                    {
-                        MessageBox.Show("У вас недостаточно денег");
-                        break;
-                    }
-                    else if (player.RankName == "Питонист" || player.RankName == "Луанист")
-                    {
-                        MessageBox.Show("У вас уже есть знания из этой книги");
-                        break;
-                    }
-                    else
-                        player.Money -= 700;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Луа: Исповедь Roblox за 890 руб.":
-
-                    if (player.Money < 890)
-                    {
-                        MessageBox.Show("У вас недостаточно денег");
-                        break;
-                    }
-                    else if (player.RankName == "Луанист")
-                    {
-                        MessageBox.Show("У вас уже есть знания из этой книги");
-                        break;
-                    }
-                    else
-                        player.Money -= 890;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Основы OOП за 1000 руб.":
-
-                    if (player.Money < 1000)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 1000;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "С#: Экспресс-курс за 1250 руб.":
-
-                    if (player.Money < 1250)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 1250;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Базы данных для детей за 1400 руб.":
-
-                    if (player.Money < 1400)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 1400;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "С++: Основы за 1600 руб.":
-
-                    if (player.Money < 1600)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 1600;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "С++: Работа с памятью за 1800 руб.":
-
-                    if (player.Money < 1800)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 1800;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money}   руб.");
-
-                    break;
-                case "С++: Указатели за 2000 руб.":
-
-                    if (player.Money < 2000)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 2000;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money}   руб.");
-
-                    break;
-                case "С++: Работа с памятью II за 2200 руб.":
-                    if (player.Money < 2200)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 2200;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Исскусство программирование на Assembler Том I за 2800 руб.":
-                    if (player.Money < 2800)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 2800;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Исскусство программирование на Assembler Том II за 3500 руб.":
-
-                    if (player.Money < 3500)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 3500;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
-                case "Исскусство программирование на Assembler Том III за 4000 руб.":
-
-                    if (player.Money < 4000)
-                    {
-                        MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                    else
-                        player.Money -= 4000;
-                    MessageBox.Show($"Вы приобрели книгу {selectedbook}");
-                    RankPoints += 1;
-                    listBoxBooks.Items.Remove(selectedbook);
-                    MessageBox.Show($"Денег: {player.Money} руб.");
-
-                    break;
+                MessageBox.Show($"Вы не выбрали книгу", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void buttonTrade_Click(object sender, EventArgs e)
         {
-
-            string selectedItem = listBoxTradeInventory.SelectedItem.ToString();
-            if (TradeInventory.Count != 0)
+            try
             {
-                double MoneyTrade = 0;
-                double Comissoin = 0;
+                string? selectedItem = listBoxTradeInventory.SelectedItem.ToString(); //отлов NullReferenceException
 
-                listBoxTradeInventory.Items.Remove(selectedItem);
-                switch (selectedItem)
+                if (TradeInventory.Count != 0)
                 {
-                    case "Синтаксический сахар":
-                        MoneyTrade += 100;
-                        TradeInventory.Remove(100);
-                        break;
-                    case "Пачка сигарет \"Git\"":
-                        MoneyTrade += 120;
-                        TradeInventory.Remove(120);
-                        break;
-                    case "Вино на кастылях":
-                        MoneyTrade += 150;
-                        TradeInventory.Remove(150);
-                        break;
-                    case "Чай \"ZAML\"":
-                        MoneyTrade += 50;
-                        TradeInventory.Remove(50);
-                        break;
-                    case "Кофе \"Мьютекс\"":
-                        MoneyTrade += 50;
-                        TradeInventory.Remove(50);
-                        break;
-                    case "Медикаменты \"Подсостояние суперсостояния\"":
-                        MoneyTrade += 200;
-                        TradeInventory.Remove(200);
-                        break;
-                    case "Статик Вилка":
-                        MoneyTrade += 300;
-                        TradeInventory.Remove(300);
-                        break;
-                    case "Лямбда мыло":
-                        MoneyTrade += 320;
-                        TradeInventory.Remove(320);
-                        break;
+                    double MoneyTrade = 0;
+                    double Comissoin = 0;
 
+                    listBoxTradeInventory.Items.Remove(selectedItem);
+                    switch (selectedItem)
+                    {
+                        case "Синтаксический сахар":
+                            MoneyTrade += 100;
+                            TradeInventory.Remove(100);
+                            break;
+                        case "Пачка сигарет \"Git\"":
+                            MoneyTrade += 120;
+                            TradeInventory.Remove(120);
+                            break;
+                        case "Вино на кастылях":
+                            MoneyTrade += 150;
+                            TradeInventory.Remove(150);
+                            break;
+                        case "Чай \"ZAML\"":
+                            MoneyTrade += 50;
+                            TradeInventory.Remove(50);
+                            break;
+                        case "Кофе \"Мьютекс\"":
+                            MoneyTrade += 50;
+                            TradeInventory.Remove(50);
+                            break;
+                        case "Медикаменты \"Подсостояние суперсостояния\"":
+                            MoneyTrade += 200;
+                            TradeInventory.Remove(200);
+                            break;
+                        case "Статик Вилка":
+                            MoneyTrade += 300;
+                            TradeInventory.Remove(300);
+                            break;
+                        case "Лямбда мыло":
+                            MoneyTrade += 320;
+                            TradeInventory.Remove(320);
+                            break;
+
+                    }
+
+
+                    if (player.RankName == "Сишарпист")
+                    {
+                        ComissionPercent = 30;
+                        Comissoin = (MoneyTrade / 100) * ComissionPercent;
+                        MoneyTrade -= Comissoin;
+                    }
+                    if (player.RankName == "Плюсист")
+                    {
+                        ComissionPercent = 20;
+                        Comissoin = (MoneyTrade / 100) * ComissionPercent;
+                        MoneyTrade -= Comissoin;
+                    }
+
+                    MessageBox.Show($"Вы продали товар:{selectedItem}");
+                    MessageBox.Show($"Ваша выручка с продажи составила: {MoneyTrade} руб.", "Барыга", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MoneyTrade += player.Money;
                 }
-
-
-                if (player.RankName == "Сишарпист")
-                {
-                    ComissionPercent = 30;
-                    Comissoin = (MoneyTrade / 100) * ComissionPercent;
-                    MoneyTrade -= Comissoin;
-                }
-                if (player.RankName == "Плюсист")
-                {
-                    ComissionPercent = 20;
-                    Comissoin = (MoneyTrade / 100) * ComissionPercent;
-                    MoneyTrade -= Comissoin;
-                }
-
-                MessageBox.Show($"Вы продали товар:{selectedItem}");
-                MessageBox.Show($"Ваша выручка с продажи составила: {MoneyTrade} руб.", "Барыга", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MoneyTrade += player.Money;
+                else
+                    MessageBox.Show($"У вас нет товара на продажу или вы хотите продать уже купленный предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            catch (NullReferenceException ex)
+            {
                 MessageBox.Show($"У вас нет товара на продажу или вы хотите продать уже купленный предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+            }
+            catch (Exception ex){
+                MessageBox.Show($"Ошибка: {ex.Message}", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void buttonGym_Click(object sender, EventArgs e)
         {
@@ -1262,102 +1220,6 @@ namespace WinFormsApp3
             else
                 MessageBox.Show($"Выберите предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        private void buttonShop_Click(object sender, EventArgs e)
-        {
-            if (IsShopbtnOpened == false)
-            {
-                listBoxShopInventory.Visible = true;
-                buttonBuyShop.Visible = true;
-                buttonBuyShop.Enabled = true;
-                IsShopbtnOpened = true;
-            }
-            else
-            {
-                IsShopbtnOpened = false;
-                buttonBuyShop.Visible = false;
-                buttonBuyShop.Enabled = false;
-                listBoxShopInventory.Visible = false;
-            }
-
-        }
-
-        private void buttonBuyShop_Click(object sender, EventArgs e)
-        {
-            if (listBoxShopInventory.SelectedItems != null)
-            {
-                
-                switch (listBoxShopInventory.SelectedItem)
-                {
-                    case "Синтаксический сахар":
-                        if (player.Money < 100)
-                        {
-                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        }
-                        else
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
-                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
-                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
-                            player.Money -= 100;
-                            MessageBox.Show($"Денег на данный момент {player.Money}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-                    case "Пачка сигарет \"Git\"":
-                        if (player.Money < 120)
-                        {
-                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        }
-                        else
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
-                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
-                            player.Money -= 120;
-                        MessageBox.Show($"Денег на данный момент {player.Money}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
-                    case "Чай \"ZAML\"":
-                        if (player.Money < 50)
-                        {
-                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        }
-                        else
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
-                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
-                            player.Money -= 120;
-                    break;
-                    case "Паблик Шило":
-                        if (player.Money < 300)
-                        {
-                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        }
-                        else
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
-                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
-                            player.Money -= 300;
-                    break;
-                    case "Массив мелков":
-                        if (player.Money < 170)
-                        {
-                            MessageBox.Show("У вас недостаточно денег", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        }
-                        else
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MessageBox.Show($"Вы купили {listBoxShopInventory.SelectedItem}.", "Покупка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            listBoxTradeInventory.Items.Add(listBoxShopInventory.SelectedItem);
-                            listBoxShopInventory.Items.Remove(listBoxShopInventory.SelectedItem);
-                            player.Money -= 170;
-                    break;
-                }
-            }
-            else
-                MessageBox.Show($"Выберите предмет", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+      
     }
 }

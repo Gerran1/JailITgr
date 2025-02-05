@@ -28,59 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            pictureBoxDialog = new PictureBox();
             button1 = new Button();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDialog).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxDialog
             // 
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(537, 408);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxDialog.Image = Properties.Resources.gide;
+            pictureBoxDialog.Location = new Point(0, 0);
+            pictureBoxDialog.Name = "pictureBoxDialog";
+            pictureBoxDialog.Size = new Size(537, 408);
+            pictureBoxDialog.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDialog.TabIndex = 0;
+            pictureBoxDialog.TabStop = false;
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 22F);
+            button1.BackColor = SystemColors.ControlDark;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Ink Free", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.LavenderBlush;
             button1.Location = new Point(427, 583);
             button1.Name = "button1";
             button1.Size = new Size(98, 58);
             button1.TabIndex = 1;
             button1.Text = "→";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(12, 423);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Ink Free", 11.9999981F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.LavenderBlush;
+            label1.Location = new Point(0, 411);
             label1.MaximumSize = new Size(500, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 21);
+            label1.Size = new Size(15, 20);
             label1.TabIndex = 2;
+            label1.Text = "-";
+            label1.Click += label1_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.grey_stena;
             ClientSize = new Size(537, 653);
             Controls.Add(label1);
             Controls.Add(button1);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxDialog);
             Name = "Form2";
             Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDialog).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxDialog;
         private Button button1;
         private Label label1;
     }

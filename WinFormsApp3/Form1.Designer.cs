@@ -44,11 +44,9 @@
             buttonStreet = new Button();
             toolTip1 = new ToolTip(components);
             listBoxInventoryBox = new ListBox();
-            listBoxShopInventory = new ListBox();
             buttonOpenBox = new Button();
             buttonPutItem = new Button();
-            buttonShop = new Button();
-            buttonBuyShop = new Button();
+
             ((System.ComponentModel.ISupportInitialize)pictureBoxLocation).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -100,7 +98,7 @@
             label1.ForeColor = Color.LavenderBlush;
             label1.Location = new Point(9, 9);
             label1.Name = "label1";
-            label1.Size = new Size(84, 15);
+            label1.Size = new Size(86, 15);
             label1.TabIndex = 4;
             label1.Text = "Расписание: ";
             // 
@@ -142,7 +140,7 @@
             buttonTheif.ForeColor = Color.LavenderBlush;
             buttonTheif.Location = new Point(9, 197);
             buttonTheif.Name = "buttonTheif";
-            buttonTheif.Size = new Size(81, 23);
+            buttonTheif.Size = new Size(88, 23);
             buttonTheif.TabIndex = 7;
             buttonTheif.Text = "Своровать";
             buttonTheif.UseVisualStyleBackColor = false;
@@ -247,22 +245,7 @@
             listBoxInventoryBox.Name = "listBoxInventoryBox";
             listBoxInventoryBox.Size = new Size(306, 109);
             listBoxInventoryBox.TabIndex = 16;
-            toolTip1.SetToolTip(listBoxInventoryBox, "Ящик");
-            // 
-            // listBoxShopInventory
-            // 
-            listBoxShopInventory.BackColor = Color.DimGray;
-            listBoxShopInventory.Cursor = Cursors.Hand;
-            listBoxShopInventory.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
-            listBoxShopInventory.ForeColor = Color.LavenderBlush;
-            listBoxShopInventory.FormattingEnabled = true;
-            listBoxShopInventory.ItemHeight = 15;
-            listBoxShopInventory.Location = new Point(176, 342);
-            listBoxShopInventory.Margin = new Padding(3, 2, 3, 2);
-            listBoxShopInventory.Name = "listBoxShopInventory";
-            listBoxShopInventory.Size = new Size(274, 109);
-            listBoxShopInventory.TabIndex = 19;
-            toolTip1.SetToolTip(listBoxShopInventory, "Ваш инвентарь предметов на продажу");
+            toolTip1.SetToolTip(listBoxInventoryBox, "Ящик");          
             // 
             // buttonOpenBox
             // 
@@ -291,38 +274,7 @@
             buttonPutItem.TabIndex = 17;
             buttonPutItem.Text = "Переложить";
             buttonPutItem.UseVisualStyleBackColor = false;
-            buttonPutItem.Click += buttonPutItem_Click;
-            // 
-            // buttonShop
-            // 
-            buttonShop.BackColor = Color.DimGray;
-            buttonShop.FlatStyle = FlatStyle.Popup;
-            buttonShop.Font = new Font("Ink Free", 9F, FontStyle.Bold | FontStyle.Italic);
-            buttonShop.ForeColor = Color.LavenderBlush;
-            buttonShop.Location = new Point(96, 196);
-            buttonShop.Margin = new Padding(3, 2, 3, 2);
-            buttonShop.Name = "buttonShop";
-            buttonShop.Size = new Size(65, 24);
-            buttonShop.TabIndex = 18;
-            buttonShop.Text = "Барыга";
-            buttonShop.UseVisualStyleBackColor = false;
-            buttonShop.Click += buttonShop_Click;
-            // 
-            // buttonBuyShop
-            // 
-            buttonBuyShop.BackColor = Color.DimGray;
-            buttonBuyShop.Cursor = Cursors.Hand;
-            buttonBuyShop.FlatStyle = FlatStyle.Popup;
-            buttonBuyShop.Font = new Font("Ink Free", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            buttonBuyShop.ForeColor = Color.LavenderBlush;
-            buttonBuyShop.Location = new Point(177, 308);
-            buttonBuyShop.Margin = new Padding(3, 2, 3, 2);
-            buttonBuyShop.Name = "buttonBuyShop";
-            buttonBuyShop.Size = new Size(74, 30);
-            buttonBuyShop.TabIndex = 20;
-            buttonBuyShop.Text = "Купить";
-            buttonBuyShop.UseVisualStyleBackColor = false;
-            buttonBuyShop.Click += buttonBuyShop_Click;
+            buttonPutItem.Click += buttonPutItem_Click;           
             // 
             // Form1
             // 
@@ -331,9 +283,6 @@
             BackColor = Color.LightSlateGray;
             BackgroundImage = Properties.Resources.grey_stena;
             ClientSize = new Size(800, 450);
-            Controls.Add(buttonBuyShop);
-            Controls.Add(listBoxShopInventory);
-            Controls.Add(buttonShop);
             Controls.Add(buttonPutItem);
             Controls.Add(listBoxInventoryBox);
             Controls.Add(buttonOpenBox);
@@ -377,8 +326,5 @@
         private Button buttonOpenBox;
         private ListBox listBoxInventoryBox;
         private Button buttonPutItem;
-        private Button buttonShop;
-        private ListBox listBoxShopInventory;
-        private Button buttonBuyShop;
     }
 }
