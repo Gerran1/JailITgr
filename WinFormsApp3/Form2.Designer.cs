@@ -76,7 +76,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.grey_stena;
+            BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(537, 653);
             Controls.Add(label1);
             Controls.Add(button1);
