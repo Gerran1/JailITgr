@@ -536,7 +536,8 @@ namespace WinFormsApp3
 
 
             }
-            questes.Database();
+            questes.FirstQuest();
+            //вернуть FirstQuest после теста
         }
         void SneakAttackToYou()
         {
