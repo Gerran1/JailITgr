@@ -414,12 +414,20 @@ namespace WinFormsApp3
                     if (badthingsRandom >= 0 && badthingsRandom < 20)
                     {
                         MessageBox.Show("Во время душа вы случайно уранили лямбда мыло, вы нагнулись за ним. Дальше кто-то подошал к вам сзади...", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        if (player.Agility >= 5 && player.Damage >= 4)
+                        if (player.Agility >= 5 && player.Damage >= 4 && player.Intelligence >= 4)
                         {
                             MessageBox.Show("но вы смогли резка дать отпор паскальщику.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
-                            MessageBox.Show("и вы не успели среагировать и произошло кое что ужасное. Ваша репутация подкасилась.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        {
+                            MessageBox.Show("и вы не успели среагировать и произошло кое что ужасное. Ваша статы подкасилась.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            player.Agility -= 1;
+                            player.Health -= 1;
+                            player.Intelligence -= 1;
+                            player.Damage -= 1;
+                        }
+                            
+
                     }
                     else
                         MessageBox.Show("Вы спокойно помылись.", "\"Неприятности\"", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -510,10 +518,10 @@ namespace WinFormsApp3
             else if (testPoints >= 4 && testPoints < 6)
             {
                 //временно сишарпист
-                MessageBox.Show("Вот ты и попался питонист!(временно сишарпист)");
+                MessageBox.Show("Вот ты и попался питонист!");
                 pictureBox2.Image = Properties.Resources.python;
-                player = new Classes.Player(csharpAdapter.Health, csharpAdapter.Damage, csharpAdapter.Agility, csharpAdapter.Intelligence, csharpAdapter.Salary, csharpAdapter.RankName, Money);
-                RankPoints = 6;
+                player = new Classes.Player(pythonAdapter.Health, pythonAdapter.Damage, pythonAdapter.Agility, pythonAdapter.Intelligence, pythonAdapter.Salary, pythonAdapter.RankName, Money);
+                RankPoints = 2;
                 MessageBox.Show($"Вы получили масть: {player.RankName}");
 
             }
