@@ -94,8 +94,6 @@ namespace WinFormsApp3
             buttonTrade.Enabled = false;
             buttonTrade.Visible = false;
 
-            buttonGym.Enabled = false;
-            buttonGym.Visible = false;
 
             buttonStreet.Enabled = false;
             buttonStreet.Visible = false;
@@ -144,8 +142,7 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
+
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
@@ -221,8 +218,6 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonOpenBox.Enabled = false;
@@ -249,8 +244,6 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
@@ -292,8 +285,6 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonOpenBox.Enabled = false;
@@ -334,8 +325,6 @@ namespace WinFormsApp3
                     buttonBuy.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonOpenBox.Enabled = false;
@@ -367,8 +356,6 @@ namespace WinFormsApp3
                     pictureBoxLocation.Image = Properties.Resources.street;
                     buttonLibrary.Enabled = true;
                     buttonLibrary.Visible = true;
-                    buttonGym.Enabled = true;
-                    buttonGym.Visible = true;
                     buttonStreet.Enabled = true;
                     buttonStreet.Visible = true;
                     buttonOpenBox.Enabled = false;
@@ -391,8 +378,6 @@ namespace WinFormsApp3
                     listBoxInventoryBox.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonOpenBox.Enabled = false;
@@ -417,8 +402,6 @@ namespace WinFormsApp3
                     listBoxInventoryBox.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
@@ -455,8 +438,6 @@ namespace WinFormsApp3
                     listBoxInventoryBox.Visible = false;
                     buttonTrade.Enabled = false;
                     buttonTrade.Visible = false;
-                    buttonGym.Enabled = false;
-                    buttonGym.Visible = false;
                     buttonStreet.Enabled = false;
                     buttonStreet.Visible = false;
                     buttonPutItem.Visible = false;
@@ -1151,16 +1132,6 @@ namespace WinFormsApp3
             catch (Exception ex){
                 MessageBox.Show($"Ошибка: {ex.Message}", "Упс...", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void buttonGym_Click(object sender, EventArgs e)
-        {
-            listBoxBooks.Visible = false;
-            listBoxTradeInventory.Visible = false;
-            buttonBuy.Visible = false;
-            buttonTrade.Visible = false;
-
-
-            pictureBoxLocation.Image = Properties.Resources.gym;
         }
         private void buttonStreet_Click(object sender, EventArgs e)
         {
