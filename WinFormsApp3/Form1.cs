@@ -536,7 +536,7 @@ namespace WinFormsApp3
 
 
             }
-            questes.FirstQuest();
+            questes.Database();
         }
         void SneakAttackToYou()
         {
@@ -854,12 +854,15 @@ namespace WinFormsApp3
                         else if (player.RankName == "Питонист" || player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
+                            questes.python_1();
+                            listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
                         else
                             player.Money -= 550;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.python_1();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -874,12 +877,15 @@ namespace WinFormsApp3
                         else if (player.RankName == "Питонист" || player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
+                            questes.python_2();
+                            listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
                         else
                             player.Money -= 700;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.python_2();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -894,12 +900,15 @@ namespace WinFormsApp3
                         else if (player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
+                            questes.Lua();
+                            listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
                         else
                             player.Money -= 890;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.Lua();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -915,6 +924,7 @@ namespace WinFormsApp3
                             player.Money -= 1000;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.OOP();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 

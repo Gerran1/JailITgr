@@ -39,7 +39,7 @@
             pictureBoxDialog.Image = Properties.Resources.gide;
             pictureBoxDialog.Location = new Point(0, 0);
             pictureBoxDialog.Name = "pictureBoxDialog";
-            pictureBoxDialog.Size = new Size(537, 408);
+            pictureBoxDialog.Size = new Size(643, 408);
             pictureBoxDialog.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxDialog.TabIndex = 0;
             pictureBoxDialog.TabStop = false;
@@ -50,7 +50,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Ink Free", 27.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.LavenderBlush;
-            button1.Location = new Point(427, 583);
+            button1.Location = new Point(530, 856);
             button1.Name = "button1";
             button1.Size = new Size(98, 58);
             button1.TabIndex = 1;
@@ -77,7 +77,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(537, 653);
+            ClientSize = new Size(640, 926);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(pictureBoxDialog);

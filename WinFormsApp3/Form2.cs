@@ -43,6 +43,10 @@ namespace WinFormsApp3
             }
 
         }
+        public void UpdatePictureBoxImage(Image image)
+        {
+            pictureBoxDialog.Image = image;
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
