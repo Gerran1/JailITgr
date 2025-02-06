@@ -73,6 +73,16 @@ namespace WinFormsApp3.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Assembler1 {
+            get {
+                object obj = ResourceManager.GetObject("Assembler1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap C_ {
             get {
                 object obj = ResourceManager.GetObject("C_", resourceCulture);
@@ -236,26 +246,6 @@ namespace WinFormsApp3.Properties {
         internal static System.Drawing.Bitmap python_1 {
             get {
                 object obj = ResourceManager.GetObject("python_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap python_2 {
-            get {
-                object obj = ResourceManager.GetObject("python_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap python_3 {
-            get {
-                object obj = ResourceManager.GetObject("python_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -73,7 +73,7 @@ namespace WinFormsApp3
             Quest.Add("Оптимизация и отладка\r\nПрофилирование:\r\nПример:\r\nimport cProfile\r\ncProfile.run('sum(range(1000))')");
             
             Form2 form2 = new Form2(Quest);
-            form2.UpdatePictureBoxImage(Properties.Resources.python_3);
+            form2.UpdatePictureBoxImage(Properties.Resources.python_1);
             form2.Show();
         }
         public void Lua()
@@ -146,13 +146,14 @@ namespace WinFormsApp3
         public void C_1()
         {
             Quest.Clear();
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
+            Quest.Add("1. Введение\r\nC++ — это компилируемый язык программирования общего назначения, разработанный как расширение C. Он поддерживает процедурное, объектно-ориентированное и обобщённое программирование.\r\nКомпиляция и запуск\r\nПрограммы на C++ можно писать в любом текстовом редакторе, но для удобства используют IDE, такие как Code::Blocks, CLion или Visual Studio.\r\nКомпиляция и запуск через терминал:\r\ng++ main.cpp -o main ./main ");
+            Quest.Add("2. Основы синтаксиса\r\nКаждая программа начинается с функции main():\r\n#include <iostream> int main() { std::cout << \"Hello, world!\" << std::endl; return 0; } \r\n#include <iostream> — библиотека для ввода/вывода.\r\nstd::cout — вывод в консоль.\r\nstd::endl — перенос строки.\r\n3. Типы данных и переменные\r\nБазовые типы\r\nВвод данных\r\nint x; std::cin >> x; ");
+            Quest.Add("4. Операторы\r\nАрифметические\r\n+, -, *, /, % (остаток от деления)\r\nint a = 10, b = 3; std::cout << (a % b); // 1 \r\nЛогические\r\n&& (и), || (или), ! (не)\r\nbool res = (5 > 3) && (3 < 10); // true \r\nОператоры сравнения\r\n==, !=, >, <, >=, <=\r\nОператоры присваивания\r\n=, +=, -=, *=, /=, %=");
+            Quest.Add("5. Условные конструкции\r\nif (x > 0) { std::cout << \"Положительное\"; } else if (x < 0) { std::cout << \"Отрицательное\"; } else { std::cout << \"Ноль\"; } \r\nАльтернативный вариант:\r\nstd::string res = (x > 0) ? \"Положительное\" : \"Отрицательное\"; \r\nОператор switch\r\nswitch (x) { case 1: std::cout << \"Один\"; break; case 2: std::cout << \"Два\"; break; default: std::cout << \"Другое\"; } ");
+            Quest.Add("6. Циклы\r\nЦикл for\r\nfor (int i = 0; i < 5; i++) { std::cout << i << \" \"; } \r\nЦикл while\r\nint i = 0; while (i < 5) { std::cout << i << \" \"; i++; } \r\nЦикл do...while\r\nint i = 0; do { std::cout << i << \" \"; i++; } while (i < 5); \r\n7. Функции\r\nОбъявление функции\r\nint sum(int a, int b) { return a + b; } \r\nПередача аргументов по ссылке\r\nvoid change(int &x) { x = 10; } ");
+            Quest.Add("8. Указатели и ссылки\r\nУказатели\r\nint a = 5; int *ptr = &a; std::cout << *ptr; // 5 \r\nСсылки\r\nint a = 10; int &ref = a; ref = 20; std::cout << a; // 20 \r\n9. Массивы и строки\r\nМассивы\r\nint arr[3] = {1, 2, 3}; std::cout << arr[0]; // 1 \r\nСтроки\r\nstd::string str = \"Hello\"; std::cout << str.length(); ");
+            Quest.Add("10. Классы и объекты\r\nСоздание класса\r\nclass Car { public: std::string brand; int year; void show() { std::cout << brand << \" \" << year; } }; int main() { Car car1; car1.brand = \"Toyota\"; car1.year = 2020; car1.show(); } \r\nКонструктор\r\nclass Car { public: std::string brand; Car(std::string b) { brand = b; } }; \r\n11. Работа с файлами\r\nЗапись в файл\r\n#include <fstream> std::ofstream file(\"test.txt\"); file << \"Hello!\"; file.close(); \r\nЧтение из файла\r\nstd::ifstream file(\"test.txt\"); std::string text; file >> text; std::cout << text; file.close(); ");
+            Quest.Add("12. Основы STL (Standard Template Library)\r\nВекторы (std::vector)\r\n#include <vector> std::vector<int> v = {1, 2, 3}; v.push_back(4); std::cout << v[0]; // 1 \r\nМножество (std::set)\r\n#include <set> std::set<int> s = {1, 2, 3}; s.insert(4); \r\nСловарь (std::map)\r\n#include <map> std::map<std::string, int> m; m[\"apple\"] = 10; std::cout << m[\"apple\"]; // 10 ");
             Form2 form2 = new Form2(Quest);
             form2.UpdatePictureBoxImage(Properties.Resources.C_1);
             form2.Show();
@@ -160,13 +161,11 @@ namespace WinFormsApp3
         public void C_2()
         {
             Quest.Clear();
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
+            Quest.Add("Введение\r\n\r\nРабота с памятью в C++ требует внимания, так как неправильное управление ресурсами может привести к утечкам памяти, неопределённому поведению и сбоям программы. В данном пособии рассмотрены основные аспекты работы с памятью: динамическое выделение, управление ресурсами и отладка.");
+            Quest.Add("1. Виды памяти в C++\r\n\r\nВ C++ существует несколько областей памяти:\r\n\r\nСтек (Stack) – используется для локальных переменных и управления вызовами функций. Выделение памяти происходит автоматически.\r\n\r\nКуча (Heap) – используется для динамического выделения памяти. Память выделяется вручную оператором new и освобождается delete.\r\n\r\nСтатическая память (Static Storage) – для глобальных и статических переменных. Существует в течение всего времени работы программы.\r\n\r\nПамять для констант (Constant Storage) – используется для строковых литералов и других неизменяемых данных.");
+            Quest.Add("2. Динамическое выделение памяти\r\n\r\n2.1 Операторы new и delete\r\n\r\nДля выделения памяти в куче используются new и delete:\r\n\r\nint* ptr = new int(42);  // Выделение памяти для одного int\r\ndelete ptr;              // Освобождение памяти\r\n\r\nДля массивов используются new[] и delete[]:\r\n\r\nint* arr = new int[10];  // Выделение памяти для массива из 10 элементов\r\ndelete[] arr;            // Освобождение памяти\r\n\r\nВажно! Использование delete вместо delete[] для массива приведёт к неопределённому поведению.");
+            Quest.Add("2.2 std::unique_ptr и std::shared_ptr (RAII)\r\n\r\nВручную управлять памятью опасно. Поэтому лучше использовать умные указатели.\r\n\r\n2.2.1 std::unique_ptr (уникальный указатель)\r\n\r\nГарантирует, что объект будет автоматически удалён при выходе из области видимости.\r\n\r\n#include <memory>\r\n\r\nstd::unique_ptr<int> ptr = std::make_unique<int>(42);");
+            Quest.Add("2.2.2 std::shared_ptr (разделяемый указатель)\r\n\r\nИспользует подсчёт ссылок, удаляя объект, когда на него больше нет ссылок.\r\n\r\n#include <memory>\r\n\r\nstd::shared_ptr<int> ptr1 = std::make_shared<int>(42);\r\nstd::shared_ptr<int> ptr2 = ptr1;  // Оба указателя ссылаются на один объект");
             Form2 form2 = new Form2(Quest);
             form2.UpdatePictureBoxImage(Properties.Resources.C_1);
             form2.Show();
@@ -174,18 +173,34 @@ namespace WinFormsApp3
         public void C_3()
         {
             Quest.Clear();
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
+            Quest.Add("Методичка по указателям в C++\r\n\r\n1. Введение в указатели\r\n\r\nУказатели — это переменные, которые хранят адреса других переменных. Они позволяют работать с динамической памятью, изменять значения переменных по адресу и использовать структуры данных, такие как списки и деревья.\r\n\r\nОбъявление указателей\r\n\r\nСинтаксис объявления указателя:\r\n\r\nтип_данных* имя_указателя;\r\n\r\nПример:\r\n\r\nint* ptr;  // указатель на переменную типа int\r\n\r\nЗдесь ptr — это указатель, который может хранить адрес переменной типа int.");
+            Quest.Add("2. Операции с указателями\r\n\r\nПолучение адреса переменной\r\n\r\nОператор & позволяет получить адрес переменной:\r\n\r\nint a = 10;\r\nint* ptr = &a; // ptr хранит адрес переменной a\r\n\r\nРазыменование указателя\r\n\r\nОператор * позволяет получить значение переменной, на которую указывает указатель:\r\n\r\nint b = 20;\r\nint* p = &b;\r\ncout << *p; // Выведет 20\r\n\r\nИзменение значения через указатель\r\n\r\nint x = 5;\r\nint* px = &x;\r\n*px = 15;  // Теперь x = 15");
+            Quest.Add("3. Динамическое выделение памяти\r\n\r\nC++ позволяет выделять память в куче (heap) с помощью оператора new:\r\n\r\nint* p = new int; // Выделение памяти под один int\r\n*p = 42;\r\n\r\nДля освобождения памяти используется delete:\r\n\r\ndelete p;\r\n\r\nДля массивов:\r\n\r\nint* arr = new int[5]; // Выделение массива из 5 элементов\r\ndelete[] arr;          // Освобождение памяти");
+            Quest.Add("4. Арифметика указателей\r\n\r\nУказатели поддерживают арифметические операции:\r\n\r\nint arr[3] = {10, 20, 30};\r\nint* p = arr; // Указатель на первый элемент массива\r\n\r\ncout << *p;   // 10\r\np++;          // Переход на следующий элемент\r\ncout << *p;   // 20");
+            Quest.Add("5. Указатели и массивы\r\n\r\nМассивы в C++ тесно связаны с указателями:\r\n\r\nint arr[3] = {1, 2, 3};\r\nint* p = arr; // Указатель на первый элемент\r\n\r\ncout << p[1]; // Выведет 2 (эквивалентно *(p + 1))");
+            Quest.Add("6. Указатели и функции\r\n\r\nПередача указателей в функцию\r\n\r\nvoid increment(int* num) {\r\n    (*num)++;\r\n}\r\n\r\nint main() {\r\n    int x = 5;\r\n    increment(&x);\r\n    cout << x; // Выведет 6\r\n}\r\n\r\nВозвращение указателя из функции\r\n\r\nint* createInt() {\r\n    int* p = new int(100);\r\n    return p;\r\n}");
+            Quest.Add("7. Константные указатели\r\n\r\nУказатель на константу\r\n\r\nconst int* p; // Нельзя изменять значение через p\r\n\r\nКонстантный указатель\r\n\r\nint* const p = &x; // p всегда указывает на x\r\n\r\nКонстантный указатель на константу\r\n\r\nconst int* const p = &x; // Нельзя менять и указатель, и значение");
+            Quest.Add("8. Умные указатели (Smart Pointers)\r\n\r\nВ C++11 добавлены unique_ptr, shared_ptr и weak_ptr:\r\n\r\n#include <memory>\r\n\r\nstd::unique_ptr<int> p1 = std::make_unique<int>(42);");
+            Quest.Add("9. Итог\r\n\r\nУказатели — мощный инструмент, но требуют аккуратного обращения. Ошибки с указателями могут привести к утечкам памяти и неопределенному поведению. Используйте smart pointers и всегда освобождайте динамически выделенную память.");
             Form2 form2 = new Form2(Quest);
             form2.UpdatePictureBoxImage(Properties.Resources.C_1);
             form2.Show();
         }
         public void C_4()
+        {
+            Quest.Clear();
+            Quest.Add("3. Проблемы работы с памятью\r\n\r\n3.1 Утечки памяти\r\n\r\nВозникают, если забыть освободить выделенную память:\r\n\r\nvoid leak() {\r\n    int* ptr = new int(42);  // Утечка памяти, так как delete не вызывается\r\n}\r\n\r\nИспользуйте умные указатели (std::unique_ptr, std::shared_ptr), чтобы избежать таких ситуаций.");
+            Quest.Add("3.2 Висячие указатели (Dangling pointers)\r\n\r\nУказатель, который указывает на уже освобождённую память.\r\n\r\nint* ptr = new int(42);\r\ndelete ptr;\r\n*ptr = 10;  // Ошибка! Доступ к освобождённой памяти\r\n\r\nПосле освобождения памяти обнуляйте указатель:\r\n\r\ndelete ptr;\r\nptr = nullptr;");
+            Quest.Add("3.3 Двойное освобождение памяти\r\n\r\nПроисходит, если дважды вызвать delete для одного указателя:\r\n\r\nint* ptr = new int(42);\r\ndelete ptr;\r\ndelete ptr;  // Ошибка! Повторное освобождение памяти\r\n\r\nРешение: Обнулять указатель после удаления (ptr = nullptr;).");
+            Quest.Add("3.4 Доступ к неинициализированной памяти\r\n\r\nИспользование памяти до её инициализации ведёт к неопределённому поведению:\r\n\r\nint* ptr;\r\nstd::cout << *ptr;  // Ошибка! ptr не указывает на выделенную память\r\n\r\nРешение: Всегда инициализируйте указатели (ptr = nullptr;).");
+            Quest.Add("4. Отладка проблем с памятью\r\n\r\n4.1 Использование valgrind (Linux)\r\n\r\nЗапустите программу с valgrind, чтобы проверить утечки памяти:\r\n\r\nvalgrind --leak-check=full ./your_program\r\n\r\n4.2 asan (AddressSanitizer)\r\n\r\nКомпилируйте программу с asan, чтобы выявлять ошибки работы с памятью:\r\n\r\ng++ -fsanitize=address -g main.cpp -o main\r\n./main");
+            Quest.Add("5. Советы по работе с памятью\r\n\r\nИспользуйте умные указатели (std::unique_ptr, std::shared_ptr).\r\nВсегда обнуляйте указатели после delete.\r\nИзбегайте сырого new и delete, если есть альтернативы (RAII, STL-контейнеры).\r\nИспользуйте инструменты для отладки (valgrind, asan).");
+            Quest.Add("Заключение\r\n\r\nПравильная работа с памятью в C++ – залог безопасных и эффективных программ. Используйте умные указатели, избегайте утечек и проверяйте код на ошибки, чтобы минимизировать проблемы с управлением памятью.");
+            Form2 form2 = new Form2(Quest);
+            form2.UpdatePictureBoxImage(Properties.Resources.C_1);
+            form2.Show();
+        }
+        public void Assembler() 
         {
             Quest.Clear();
             Quest.Add("");
@@ -196,7 +211,7 @@ namespace WinFormsApp3
             Quest.Add("");
             Quest.Add("");
             Form2 form2 = new Form2(Quest);
-            form2.UpdatePictureBoxImage(Properties.Resources.C_1);
+            form2.UpdatePictureBoxImage(Properties.Resources.Assembler1);
             form2.Show();
         }
     }

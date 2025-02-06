@@ -536,7 +536,7 @@ namespace WinFormsApp3
 
 
             }
-            questes.FirstQuest();
+            questes.Database();
             //вернуть FirstQuest после теста
         }
         void SneakAttackToYou()
@@ -941,6 +941,7 @@ namespace WinFormsApp3
                             player.Money -= 1250;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.С__();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -956,6 +957,7 @@ namespace WinFormsApp3
                             player.Money -= 1400;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.Database();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -971,6 +973,7 @@ namespace WinFormsApp3
                             player.Money -= 1600;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.C_1();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -986,6 +989,7 @@ namespace WinFormsApp3
                             player.Money -= 1800;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.C_2();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money}   руб.");
 
@@ -1001,6 +1005,7 @@ namespace WinFormsApp3
                             player.Money -= 2000;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.C_3();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money}   руб.");
 
@@ -1015,6 +1020,7 @@ namespace WinFormsApp3
                             player.Money -= 2200;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.C_4();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
