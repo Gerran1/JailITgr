@@ -200,16 +200,41 @@ namespace WinFormsApp3
             form2.UpdatePictureBoxImage(Properties.Resources.C_1);
             form2.Show();
         }
-        public void Assembler() 
+        public void Assembler1()
         {
             Quest.Clear();
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
-            Quest.Add("");
+            Quest.Add("Часть 1: Основы Assembler\r\n\r\n1.1 Введение в язык Assembler\r\n\r\nAssembler (ассемблер) — это низкоуровневый язык программирования, который представляет собой текстовую форму машинных инструкций процессора. Он позволяет работать напрямую с аппаратными ресурсами компьютера, такими как регистры, память и порты ввода-вывода.");
+            Quest.Add("1.2 Архитектура процессора и регистры\r\n\r\nПеред программированием на Assembler важно понимать архитектуру процессора.\r\n\r\n1.2.1 Основные компоненты процессора\r\n\r\nALU (Арифметико-логическое устройство) – выполняет арифметические и логические операции.\r\n\r\nРегистры – небольшая сверхбыстрая память внутри процессора.\r\n\r\nШина данных, адреса и управления – каналы передачи информации между компонентами.");
+            Quest.Add("1.2.2 Основные регистры x86\r\n\r\nОбщие регистры (GPR - General Purpose Registers):\r\n\r\nEAX – аккумулятор, используется для арифметических операций.\r\n\r\nEBX – базовый регистр.\r\n\r\nECX – счётчик циклов.\r\n\r\nEDX – регистр данных.");
+            Quest.Add("Указатели и индексы:\r\n\r\nESI (Source Index) и EDI (Destination Index) – используются при работе с массивами.\r\n\r\nESP (Stack Pointer) – указывает на вершину стека.\r\n\r\nEBP (Base Pointer) – используется для доступа к переменным в стеке.\r\n\r\n\r\nСегментные регистры:\r\n\r\nCS, DS, SS, ES, FS, GS – используются для адресации памяти.\r\n\r\n\r\nФлаговый регистр (EFLAGS) – хранит флаги состояния процессора.");
+            Quest.Add("1.3 Основные инструкции Assembler\r\n\r\n1.3.1 Перемещение данных\r\n\r\nMOV – копирует данные между регистрами и памятью.\r\n\r\nMOV EAX, 5    ; загрузка числа 5 в EAX\r\nMOV EBX, EAX  ; копирование значения EAX в EBX\r\n\r\nPUSH / POP – работа со стеком.\r\n\r\nPUSH EAX    ; сохранить EAX в стеке\r\nPOP EBX     ; извлечь значение в EBX");
+            Quest.Add("1.3.2 Арифметические и логические операции\r\n\r\nADD, SUB – сложение и вычитание.\r\n\r\nADD EAX, 2   ; EAX = EAX + 2\r\nSUB EAX, 1   ; EAX = EAX - 1\r\n\r\nMUL, DIV – умножение и деление.\r\n\r\nAND, OR, XOR, NOT – битовые операции.");
+
+            Form2 form2 = new Form2(Quest);
+            form2.UpdatePictureBoxImage(Properties.Resources.Assembler1);
+            form2.Show();
+        }
+        public void Assembler2()
+            {
+            Quest.Clear();
+            Quest.Add("Часть 2: Программирование на Assembler\r\n\r\n2.1 Условные операторы и циклы\r\n\r\n2.1.1 Условные операторы\r\n\r\nИспользуются команды CMP (сравнение) и условные переходы (JE, JNE, JG, JL).\r\n\r\nMOV EAX, 10\r\nCMP EAX, 5\r\nJE equal_label  ; если EAX == 5, перейти к метке equal_label");
+            Quest.Add("2.1.2 Циклы\r\n\r\nЦикл с LOOP:\r\n\r\nMOV ECX, 5\r\nloop_start:\r\n    DEC ECX\r\n    JNZ loop_start ; Повторять, пока ECX != 0\r\n\r\n2.2 Работа с памятью\r\n\r\n2.2.1 Адресация в памяти\r\n\r\nПрямой доступ:\r\n\r\nMOV EAX, [var] ; загрузить значение переменной var в EAX\r\n\r\nКосвенный доступ:\r\n\r\nMOV EAX, [EBX] ; загрузить значение по адресу в EBX");
+            Quest.Add("2.3 Вызов функций\r\n\r\n2.3.1 Стандартный вызов процедуры\r\n\r\nCALL my_function\r\n...\r\nmy_function:\r\n    RET  ; возврат из функции");
+            
+
+            Form2 form2 = new Form2(Quest);
+            form2.UpdatePictureBoxImage(Properties.Resources.Assembler1);
+            form2.Show();
+        }
+        public void Assembler3()
+        {
+            Quest.Clear();
+            Quest.Add("Часть 3: Системное программирование и оптимизация\r\n\r\n3.1 Взаимодействие с ОС\r\n\r\n3.1.1 Вызов системных функций в Windows (через API)\r\n\r\nПример вызова MessageBox в Windows:\r\n\r\nextern MessageBoxA\r\nsection .data\r\n    message db \"Hello, World!\", 0\r\n    title db \"Message\", 0\r\nsection .text\r\nglobal main\r\nmain:\r\n    push 0\r\n    push title\r\n    push message\r\n    push 0\r\n    call MessageBoxA\r\n    ret");
+            Quest.Add("3.1.2 Вызов системных функций в Linux\r\n\r\nПример syscall для вывода текста:\r\n\r\nsection .data\r\n    msg db \"Hello, World!\", 0xA\r\n    len equ $ - msg\r\n\r\nsection .text\r\nglobal _start\r\n\r\n_start:\r\n    mov eax, 4        ; syscall: sys_write\r\n    mov ebx, 1        ; stdout\r\n    mov ecx, msg      ; адрес сообщения\r\n    mov edx, len      ; длина сообщения\r\n    int 0x80          ; вызов ядра\r\n\r\n    mov eax, 1        ; syscall: sys_exit\r\n    xor ebx, ebx\r\n    int 0x80");
+            Quest.Add("3.2 Оптимизация кода\r\n\r\n3.2.1 Использование регистров вместо памяти\r\n\r\nЧастые обращения к памяти замедляют выполнение программы. Используйте регистры:\r\n\r\nMOV EAX, [mem_var]  ; плохо (медленно)\r\nMOV EBX, EAX        ; лучше (быстрее)");
+            Quest.Add("3.2.2 Разворачивание циклов\r\n\r\nОбычный цикл:\r\n\r\nMOV ECX, 3\r\nloop_start:\r\n    ADD EAX, 1\r\n    LOOP loop_start\r\n\r\nРазвёрнутый вариант (может быть быстрее):\r\n\r\nADD EAX, 1\r\nADD EAX, 1\r\nADD EAX, 1");
+            
+
             Form2 form2 = new Form2(Quest);
             form2.UpdatePictureBoxImage(Properties.Resources.Assembler1);
             form2.Show();

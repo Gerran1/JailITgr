@@ -536,7 +536,7 @@ namespace WinFormsApp3
 
 
             }
-            questes.Database();
+            questes.FirstQuest();
             //вернуть FirstQuest после теста
         }
         void SneakAttackToYou()
@@ -1035,6 +1035,7 @@ namespace WinFormsApp3
                             player.Money -= 2800;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.Assembler1();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -1050,6 +1051,7 @@ namespace WinFormsApp3
                             player.Money -= 3500;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.Assembler2();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
@@ -1065,6 +1067,7 @@ namespace WinFormsApp3
                             player.Money -= 4000;
                         MessageBox.Show($"Вы приобрели книгу {selectedbook}");
                         RankPoints += 1;
+                        questes.Assembler3();
                         listBoxBooks.Items.Remove(selectedbook);
                         MessageBox.Show($"Денег: {player.Money} руб.");
 
