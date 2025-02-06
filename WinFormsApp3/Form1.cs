@@ -798,7 +798,7 @@ namespace WinFormsApp3
         {
             if (player.Health <= 0 || player.Damage <= 0 || player.Agility <= 0 || player.Agility <= 0 || player.Intelligence <= 0)
             {
-                MessageBox.Show("Одна из ваших характеристик опустилась до нуля. Вы погибли", "Смерть.", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                MessageBox.Show("Одна из ваших характеристик опустилась до нуля. Вы погибли", "Смерть.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
         }
@@ -855,7 +855,6 @@ namespace WinFormsApp3
                         else if (player.RankName == "Питонист" || player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
-                            questes.python_1();
                             listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }
@@ -878,7 +877,6 @@ namespace WinFormsApp3
                         else if (player.RankName == "Питонист" || player.RankName == "Луанист")
                         {
                             MessageBox.Show("У вас уже есть знания из этой книги");
-                            questes.python_2();
                             listBoxBooks.Items.Remove(selectedbook);
                             break;
                         }

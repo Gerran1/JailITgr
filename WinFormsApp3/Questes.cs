@@ -33,7 +33,7 @@ namespace WinFormsApp3
             Quest.Add("5. В тюрьме есть перекличка, где можно будет узнать свою статистику, а во время приема пищи в обед будет доступно восполнение статистики.\n");
             Quest.Add("6. Игра заканчивается, когда игрок достигает высшего ранга или когда у игрока закончилось все здоровье и средства.\n");
             Form2 form2 = new Form2(Quest);
-            form2.UpdatePictureBoxImage(Properties.Resources.gide);
+            form2.UpdatePictureBoxImage(Properties.Resources.Itgr_black);
             form2.Show();
         }
 

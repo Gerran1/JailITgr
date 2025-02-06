@@ -36,11 +36,11 @@
             // 
             // pictureBoxDialog
             // 
-            pictureBoxDialog.Image = Properties.Resources.gide;
+            pictureBoxDialog.Image = Properties.Resources.Itgr_black;
             pictureBoxDialog.Location = new Point(0, 0);
             pictureBoxDialog.Name = "pictureBoxDialog";
             pictureBoxDialog.Size = new Size(643, 408);
-            pictureBoxDialog.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDialog.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxDialog.TabIndex = 0;
             pictureBoxDialog.TabStop = false;
             // 
